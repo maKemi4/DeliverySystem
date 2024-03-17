@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DeliverySystem.WebAPI/DeliverySystem.WebAPI/obj/Debug/net8.0
+/.vs
+/DeliverySystem/.vs/DeliverySystem
+/DeliverySystem/DeliverySystem.WebAPI/DeliverySystem.WebAPI/bin/Debug/net8.0
+/DeliverySystem/DeliverySystem.WebAPI/DeliverySystem.WebAPI/obj
+/DeliverySystem/DeliverySystem.BusinessLogic/obj
+/DeliverySystem/DeliverySystem.Database/bin/Debug
+/DeliverySystem/DeliverySystem.Database/obj/Debug
+/DeliverySystem/DeliverySystem.Database/Import Schema Logs
+/DeliverySystem/DeliverySystem.Infrastructure/obj
+/DeliverySystem/.vs/ProjectEvaluation
+/DeliverySystem/DeliverySystem.Database/DeliverySystem.Database.dbmdl
+/DeliverySystem/DeliverySystem.Database/DeliverySystem.Database.jfm
+/DeliverySystem/DeliverySystem.Database/DeliverySystem.Database.sqlproj.user
