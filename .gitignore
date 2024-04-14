@@ -16,8 +16,3 @@
 /DeliverySystem/DeliverySystem.Database/DeliverySystem.Database.dbmdl
 /DeliverySystem/DeliverySystem.Database/DeliverySystem.Database.jfm
 /DeliverySystem/DeliverySystem.Database/DeliverySystem.Database.sqlproj.user
-/DeliverySystem/DeliverySystem.Shared/obj/Debug/net8.0
-/DeliverySystem/DeliverySystem.Shared/obj
-/DeliverySystem/DeliverySystem.WebAPI/DeliverySystem.WebAPI/Controllers/WeatherForecastController.cs
-/DeliverySystem/DeliverySystem.WebAPI/DeliverySystem.WebAPI/WeatherForecast.cs
-/DeliverySystem/DeliverySystem.WebAPI/DeliverySystem.WebAPI/Models/DeliveryQueueRecord.cs
