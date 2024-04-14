@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DeliverySystem.Infrastructure\DeliverySystem.Infrastructure.csproj" />
+    <ProjectReference Include="..\DeliverySystem.Shared\DeliverySystem.Shared.csproj" />
   </ItemGroup>
 
 </Project>

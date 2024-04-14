@@ -15,7 +15,9 @@ namespace DeliverySystem.BusinessLogic.Mappings
         {
             CreateMap<DeliveryRequest, DeliveryQueueRecord>()
                 .ForMember(dest => dest.NumOfVictims, opt => opt.MapFrom(src => src.Requirements.NumOfVictims))
-                .ForMember(dest => dest.Importance, opt => opt.Ignore());
+                .ForMember(dest => dest.ImportanceRate, opt => opt.Ignore());
+
+            CreateMap<DeliveryRequest, DeliveryQueueItem>();
         }
     }
 }

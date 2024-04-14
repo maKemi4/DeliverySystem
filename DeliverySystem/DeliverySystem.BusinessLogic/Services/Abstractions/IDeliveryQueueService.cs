@@ -10,5 +10,6 @@ namespace DeliverySystem.BusinessLogic.Services.Abstractions
     public interface IDeliveryQueueService
     {
         Task AddRequest(DeliveryRequest deliveryRequest);
+        Task<IEnumerable<DeliveryQueueItem>> GetRequests();
     }
 }

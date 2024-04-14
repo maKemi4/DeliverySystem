@@ -20,14 +20,18 @@ namespace DeliverySystem.WebAPI.Controllers
         [HttpPost]
         public IActionResult AddRequest(AddDeliveryRequestModel deliveryRequest)
         {
-            var request = new DeliveryRequest() { Id = Guid.NewGuid().ToString() };
+            var request = new DeliveryRequest() { };
+
+
+
             return Ok();
         }
 
         [HttpGet]
-        public Task<IEnumerable<DeliveryQueueRecord>> GetAll()
+        public async Task<IEnumerable<DeliveryQueueItem>> GetAll()
         {
-            return Task.FromResult(Enumerable.Empty<DeliveryQueueRecord>());
+            var items = await _deliveryQueueService.GetRequests();
+            return items;
         }
     }
 }

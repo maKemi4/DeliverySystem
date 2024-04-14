@@ -31,11 +31,19 @@ namespace DeliverySystem.BusinessLogic.Services
             var importance = await _queueImportanceService.Calculate(deliveryRequest.Requirements);
             var databaseModel = _mapper.Map<DeliveryQueueRecord>(deliveryRequest);
 
-            databaseModel.Importance = importance;
+            databaseModel.ImportanceRate = importance;
 
             await _deliveryQueueRepository.Add(databaseModel);
         }
 
-
+        public async Task<IEnumerable<DeliveryQueueItem>> GetRequests()
+        {
+            var items = await _deliveryQueueRepository.GetAll();
+            var queueItems = items.Select(i => new DeliveryQueueItem()
+            {
+                 Id = i.Id,
+                  Name = $"{i.Name} {i.Surname}"
+            })
+        }
     }
 }

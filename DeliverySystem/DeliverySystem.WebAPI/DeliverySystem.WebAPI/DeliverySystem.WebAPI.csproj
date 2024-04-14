@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\DeliverySystem.BusinessLogic\DeliverySystem.BusinessLogic.csproj" />
+    <ProjectReference Include="..\..\DeliverySystem.Shared\DeliverySystem.Shared.csproj" />
   </ItemGroup>
 
 </Project>

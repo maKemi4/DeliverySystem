@@ -66,5 +66,7 @@
   <ItemGroup>
     <Build Include="dbo\Tables\DeliveryQueue.sql" />
     <Build Include="dbo\Stored Procedures\p_GetDeliveryQueueRecords.sql" />
+    <Build Include="dbo\Stored Procedures\p_UpdateDeliveryQueueRecord.sql" />
+    <Build Include="dbo\Stored Procedures\p_CreateOrderList.sql" />
   </ItemGroup>
 </Project>
