@@ -41,7 +41,7 @@ namespace DeliverySystem.Infrastructure.Repositories
                     {  "@OnlyNotCompleted", onlyNotCompleted }
                 };
                 var parameters = new DynamicParameters(dictionary);
-                var records = await connection.QueryAsync<DeliveryQueueRecord>("p_GetDeliveryQueueRecords", parameters,
+                var records = await connection.QueryAsync<DeliveryQueueRecord>("p_GetDeliveryQueueRecord", parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
 
                 return records;

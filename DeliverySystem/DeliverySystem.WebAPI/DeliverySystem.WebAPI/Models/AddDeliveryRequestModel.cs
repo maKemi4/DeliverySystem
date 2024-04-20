@@ -13,7 +13,7 @@ namespace DeliverySystem.WebAPI.Models
         public string Surname { get; set; }
         public string Email { get; set; }
         public string PhoneNum { get; set; }
-        public string Settlement { get; set; }
+        public string LocalityName { get; set; }
 
         //....
     }
