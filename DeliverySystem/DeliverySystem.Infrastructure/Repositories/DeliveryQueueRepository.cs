@@ -11,15 +11,17 @@ namespace DeliverySystem.Infrastructure.Repositories
 {
     public interface IDeliveryQueueRepository
     {
-        Task Add(DeliveryQueueRecord record);
-        Task<IEnumerable<DeliveryQueueRecord>> GetAll(bool onlyNotCompleted = false);
+        Task Add(DeliveryQueueFullRequestInformation record);
+        Task<DeliveryQueueFullRequestInformation> GetRequestInformation(int queueRecordId);
+        Task<IEnumerable<DeliveryQueueRecords>> GetAll(bool onlyNotCompleted = false);
+        
     }
 
     public class DeliveryQueueRepository : IDeliveryQueueRepository
     {
         private readonly string _connectionString = "Data Source=DESKTOP-MUGRJ5P;Initial Catalog=DeliverySystem;Integrated Security=True;Encrypt=False";
 
-        public async Task Add(DeliveryQueueRecord record)
+        public async Task Add(DeliveryQueueFullRequestInformation record)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -27,12 +29,13 @@ namespace DeliverySystem.Infrastructure.Repositories
                 var parmDictionary = dictionary.Select(d => new { Key = $"@{d.Key}", d.Value }).ToDictionary(d => d.Key, d => d.Value);
                 var parameters = new DynamicParameters(dictionary);
 
-                await connection.QueryAsync<DeliveryQueueRecord>("p_UpdateDeliveryQueueRecord", parameters,
+                await connection.QueryAsync<DeliveryQueueFullRequestInformation>("p_UpdateDeliveryQueueRecord", parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
             }
         }
 
-        public async Task<IEnumerable<DeliveryQueueRecord>> GetAll(bool onlyNotCompleted = false)
+        //GetAll: Якщо onlyNotCompleted = false виводить всі заявки, якщо onlyNotCompleted = true тільки ті, які невиконані
+        public async Task<IEnumerable<DeliveryQueueRecords>> GetAll(bool onlyNotCompleted = false) 
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -41,10 +44,27 @@ namespace DeliverySystem.Infrastructure.Repositories
                     {  "@OnlyNotCompleted", onlyNotCompleted }
                 };
                 var parameters = new DynamicParameters(dictionary);
-                var records = await connection.QueryAsync<DeliveryQueueRecord>("p_GetDeliveryQueueRecord", parameters,
+                var records = await connection.QueryAsync<DeliveryQueueRecords>("p_GetDeliveryQueueRecords", parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
 
                 return records;
+            }
+        }
+
+        public async Task<DeliveryQueueFullRequestInformation> GetRequestInformation(int queueRecordId)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var dictionary = new Dictionary<string, object>()
+                {
+                    {  "@DeliveryQueueId", queueRecordId }
+                };
+                var parameters = new DynamicParameters(dictionary);
+
+                var record = await connection.QueryFirstOrDefaultAsync<DeliveryQueueFullRequestInformation>("p_GetDeliveryQueueFullRequestInformation", parameters,
+                    commandType: System.Data.CommandType.StoredProcedure);
+
+                return record;
             }
         }
     }

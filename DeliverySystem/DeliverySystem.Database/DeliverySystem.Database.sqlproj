@@ -62,10 +62,11 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Views" />
+    <Folder Include="dbo\Functions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\DeliveryQueue.sql" />
-    <Build Include="dbo\Stored Procedures\p_GetDeliveryQueueRecord.sql" />
+    <Build Include="dbo\Stored Procedures\p_GetDeliveryQueueRecords.sql" />
     <Build Include="dbo\Stored Procedures\p_UpdateDeliveryQueueRecord.sql" />
     <Build Include="dbo\Stored Procedures\p_CreateOrderList.sql" />
     <Build Include="dbo\Tables\DeliveryRequest.sql" />
@@ -73,6 +74,8 @@
     <Build Include="dbo\Tables\OrderItem.sql" />
     <Build Include="dbo\Tables\OrderExecutor.sql" />
     <Build Include="dbo\Tables\Customer.sql" />
+    <Build Include="dbo\Stored Procedures\p_GetDeliveryQueueFullRequestInformation.sql" />
+    <Build Include="dbo\Stored Procedures\p_GetOrder.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DeliverySystem.Database.refactorlog" />

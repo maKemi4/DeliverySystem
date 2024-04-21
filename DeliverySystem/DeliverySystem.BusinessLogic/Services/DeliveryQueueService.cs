@@ -29,7 +29,7 @@ namespace DeliverySystem.BusinessLogic.Services
         public async Task AddRequest(DeliveryRequest deliveryRequest)
         {
             var importance = await _queueImportanceService.Calculate(deliveryRequest.Requirements);
-            var databaseModel = _mapper.Map<DeliveryQueueRecord>(deliveryRequest);
+            var databaseModel = _mapper.Map<DeliveryQueueFullRequestInformation>(deliveryRequest);
 
             databaseModel.ImportanceRate = importance;
 

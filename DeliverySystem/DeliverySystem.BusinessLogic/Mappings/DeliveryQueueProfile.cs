@@ -13,7 +13,7 @@ namespace DeliverySystem.BusinessLogic.Mappings
     {
         public DeliveryQueueProfile() 
         {
-            CreateMap<DeliveryRequest, DeliveryQueueRecord>()
+            CreateMap<DeliveryRequest, DeliveryQueueFullRequestInformation>()
                 .ForMember(dest => dest.NumOfVictims, opt => opt.MapFrom(src => src.Requirements.NumOfVictims))
                 .ForMember(dest => dest.ImportanceRate, opt => opt.Ignore());
 

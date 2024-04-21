@@ -1,6 +1,7 @@
 ﻿CREATE TABLE [dbo].[OrderExecutor]
 (
 	[OrderExecutorId] INT NOT NULL PRIMARY KEY, 
-    [Name] NCHAR(10) NOT NULL, 
-    [OrganizationName] NCHAR(10) NOT NULL
+    [ExecutorName] VARCHAR(50) NOT NULL, 
+    [ExecutorSurname] VARCHAR(50) NOT NULL, 
+    [OrganizationName] VARCHAR(50) NOT NULL
 )

@@ -7,10 +7,11 @@
 	@Latitude decimal(18,2) not null,
 	@Longitude decimal(18,2) not null,
 	@NumOfVictims int not null,
-	@NumOfSeverelVictims int null,
+	@NumOfSeveralVictims int null,
 	@ConditionType int not null,
 	@SituationDescription varchar(50) null,
 	@Importance int not null, 
+	@SubmissionDate datetime not null,
 	@ImportanceRate decimal(18,2) not null,
 	@IsCompleted bit not null 
 
@@ -26,18 +27,17 @@ AS
 
 		SELECT @CustomerId = SCOPE_IDENTITY();
 	END
-
 	ELSE
 	BEGIN
 		SELECT @CustomerId = CustomerId FROM Customer WHERE CustomerName = @CustomerName AND CustomerSurname = @CustomerSurname;
 	END
 
-	INSERT INTO DeliveryRequest (CustomerId, LocalityName, Latitude, Longitude, NumOfVictims, NumOfSeverelVictims, ConditionType, SituationDescription)
-	VALUES (@CustomerId, @LocalityName, @Latitude, @Longitude, @NumOfVictims, @NumOfSeverelVictims, @ConditionType, @SituationDescription)
+	INSERT INTO DeliveryRequest (CustomerId, LocalityName, Latitude, Longitude, NumOfVictims, NumOfSeveralVictims, ConditionType, SituationDescription, Importance)
+	VALUES (@CustomerId, @LocalityName, @Latitude, @Longitude, @NumOfVictims, @NumOfSeveralVictims, @ConditionType, @SituationDescription, @Importance)
 
 	SELECT @DeliveryRequestId = SCOPE_IDENTITY();
 
-	INSERT INTO DeliveryQueue (DeliveryRequestId, Importance, ImportanceRate, IsCompleted)
-	VALUES (@DeliveryRequestId, @Importance, @ImportanceRate, @IsCompleted)
+	INSERT INTO DeliveryQueue (DeliveryRequestId, ImportanceRate, IsCompleted, SubmissionDate)
+	VALUES (@DeliveryRequestId, @ImportanceRate, @IsCompleted, @SubmissionDate)
 
 RETURN 0

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[OrderItems]
+﻿CREATE TABLE [dbo].[OrderItem]
 (
 	[OrderItemId] INT NOT NULL PRIMARY KEY, 
     [DeliveryQueueId] INT NOT NULL, 
