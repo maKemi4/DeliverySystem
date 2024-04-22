@@ -12,32 +12,53 @@ namespace DeliverySystem.Infrastructure.Repositories
 {
     public interface IOrderRepository
     {
-        Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds);
+        Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds, string executorName, string executorSurname, string organizationName);
+        Task<IEnumerable<Order>> GetOrders(int orderId);
     }
 
     public class OrderRepository : IOrderRepository
     {
         private readonly string _connectionString = "Data Source=DESKTOP-MUGRJ5P;Initial Catalog=DeliverySystem;Integrated Security=True;Encrypt=False";
 
-        public async Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds)
+        public async Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds, string executorName, string executorSurname, string organizationName)
         {
             using(var connection = new SqlConnection(_connectionString))
             {
-                var dictionary = new Dictionary<string, object>()
-                {
-                    {  "@deliveryQueueRecordIds", deliveryQueueRecordIds }
-                };
-
                 if (!deliveryQueueRecordIds.Any()) return -1;
                 var ids = string.Join(",", deliveryQueueRecordIds);
 
+                var dictionary = new Dictionary<string, object>()
+                {
+                    { "@DeliveryQueueRecordIds", ids },
+                    { "@ExecutorName", executorName },
+                    { "@ExecutorSurname", executorSurname },
+                    { "@OrganizationName", organizationName }
+                };
+
                 var parameters = new DynamicParameters(dictionary);
 
-                var record = await connection.QueryAsync<OrderList>("p_CreateOrderList", parameters,
+                var record = await connection.QueryFirstOrDefaultAsync<int>("p_CreateOrderList", parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
 
                 return record;
             } 
+        }
+
+        public async Task<IEnumerable<Order>> GetOrders(int orderId)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var dictionary = new Dictionary<string, object>()
+                {
+                    {  "@OrderId", orderId }
+                };
+
+                var parameters = new DynamicParameters(dictionary);
+                var records = await connection.QueryAsync<Order>("p_GetOrder", parameters,
+                    commandType: System.Data.CommandType.StoredProcedure);
+
+                return records;
+            }
         }
     }
 }
