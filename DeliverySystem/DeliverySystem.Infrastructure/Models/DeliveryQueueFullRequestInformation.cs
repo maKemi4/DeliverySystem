@@ -17,7 +17,7 @@ namespace DeliverySystem.Infrastructure.Models
         public decimal Latitude { get; set; }
         public decimal Longtitude { get; set; }
         public int NumOfVictims { get; set; }
-        public int NumOfSeveralVictims { get; set; }
+        public int NumOfSeveralyVictims { get; set; }
         public int ConditionType { get; set; }
         public string SituationDescription { get; set; }
 

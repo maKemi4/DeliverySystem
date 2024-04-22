@@ -5,7 +5,7 @@
     [Latitude] DECIMAL(18, 2) NOT NULL, 
     [Longitude] DECIMAL(18, 2) NOT NULL, 
     [NumOfVictims] INT NOT NULL, 
-    [NumOfSeveralVictims] INT NOT NULL, 
+    [NumOfSeveralyVictims] INT NOT NULL, 
     [ConditionType] INT NOT NULL , 
     [SituationDescription] VARCHAR(50) NULL, 
     [Importance] INT NOT NULL, 

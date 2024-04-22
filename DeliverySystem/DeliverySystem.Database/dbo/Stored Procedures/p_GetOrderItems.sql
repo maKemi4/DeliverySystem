@@ -1,8 +1,8 @@
-﻿CREATE PROCEDURE [dbo].[p_GetOrder]
+﻿CREATE PROCEDURE [dbo].[p_GetOrderItems]
 	@OrderId int
 AS
 -- для задачі комівояжера
-	SELECT dr.LocalityName, dr.Longitude, dr.Latitude, dr.NumOfVictims, dr.NumOfSeveralVictims, dr.Importance, dq.ImportanceRate FROM OrderItem oi
+	SELECT dr.DeliveryRequestId, dr.LocalityName, dr.Longitude, dr.Latitude, dr.Importance, dq.ImportanceRate FROM OrderItem oi
 		LEFT JOIN [Order] o on o.OrderId = oi.OrderId
 		LEFT JOIN [DeliveryQueue] dq on dq.DeliveryQueueId = oi.DeliveryQueueId
 		LEFT JOIN [DeliveryRequest] dr on dr.DeliveryRequestId = dq.DeliveryRequestId

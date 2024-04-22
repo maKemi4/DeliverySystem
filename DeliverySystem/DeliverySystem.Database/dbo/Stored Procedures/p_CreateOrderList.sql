@@ -1,11 +1,10 @@
 ﻿CREATE PROCEDURE [dbo].[p_CreateOrderList]
-	@DeliveryQueueItemIds NVARCHAR(255), -- "1,2,3,4,5"
+	@DeliveryQueueItemIds NVARCHAR(255),
 	@ExecutorName VARCHAR(50),
 	@ExecutorSurname VARCHAR(50),
 	@OrganizationName VARCHAR(50)
 AS
 	DECLARE @OrderExecutorId INT;
-	-- Insert into Замовлення
 	IF NOT EXISTS(SELECT TOP 1 * FROM OrderExecutor WHERE ExecutorName = @ExecutorName and ExecutorSurname = @ExecutorSurname)
 	BEGIN 
 		INSERT INTO OrderExecutor (ExecutorName, ExecutorSurname, OrganizationName)

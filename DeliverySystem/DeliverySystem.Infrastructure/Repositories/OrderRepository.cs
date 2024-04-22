@@ -13,7 +13,7 @@ namespace DeliverySystem.Infrastructure.Repositories
     public interface IOrderRepository
     {
         Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds, string executorName, string executorSurname, string organizationName);
-        Task<IEnumerable<Order>> GetOrders(int orderId);
+        Task<IEnumerable<OrderItem>> GetOrderItems(int orderId);
     }
 
     public class OrderRepository : IOrderRepository
@@ -22,11 +22,11 @@ namespace DeliverySystem.Infrastructure.Repositories
 
         public async Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds, string executorName, string executorSurname, string organizationName)
         {
-            using(var connection = new SqlConnection(_connectionString))
-            {
-                if (!deliveryQueueRecordIds.Any()) return -1;
-                var ids = string.Join(",", deliveryQueueRecordIds);
+            if (!deliveryQueueRecordIds.Any()) return -1;
+            var ids = string.Join(",", deliveryQueueRecordIds);
 
+            using (var connection = new SqlConnection(_connectionString))
+            {
                 var dictionary = new Dictionary<string, object>()
                 {
                     { "@DeliveryQueueRecordIds", ids },
@@ -44,7 +44,7 @@ namespace DeliverySystem.Infrastructure.Repositories
             } 
         }
 
-        public async Task<IEnumerable<Order>> GetOrders(int orderId)
+        public async Task<IEnumerable<OrderItem>> GetOrderItems(int orderId)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -54,7 +54,7 @@ namespace DeliverySystem.Infrastructure.Repositories
                 };
 
                 var parameters = new DynamicParameters(dictionary);
-                var records = await connection.QueryAsync<Order>("p_GetOrder", parameters,
+                var records = await connection.QueryAsync<OrderItem>("p_GetOrderItems", parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
 
                 return records;
