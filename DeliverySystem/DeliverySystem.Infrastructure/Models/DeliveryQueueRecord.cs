@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeliverySystem.Infrastructure.Models
 {
-    public class DeliveryQueueRecords
+    public class DeliveryQueueRecord
     {
         public int DeliveryQueueId { get; set; }
         public decimal ImportanceRate { get; set; }

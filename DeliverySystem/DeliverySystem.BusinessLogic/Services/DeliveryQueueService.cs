@@ -36,14 +36,20 @@ namespace DeliverySystem.BusinessLogic.Services
             await _deliveryQueueRepository.Add(databaseModel);
         }
 
-        public async Task<IEnumerable<DeliveryQueueItem>> GetRequests()
+        public async Task<IEnumerable<DeliveryQueueItem>> GetRequests(bool status = false) //status = false: not completed, status = true: completed
         {
-            var items = await _deliveryQueueRepository.GetAll();
-            var queueItems = items.Select(i => new DeliveryQueueItem()
-            {
-                 Id = i.Id,
-                  Name = $"{i.Name} {i.Surname}"
-            })
+            var records = await _deliveryQueueRepository.GetAll(status);
+            var items = _mapper.Map<IEnumerable<DeliveryQueueItem>>(records);
+
+            return items;
+        }
+
+        public async Task<DeliveryRequest> GetInformation(int queueRecordId)
+        {
+            var records = await _deliveryQueueRepository.GetRequestInformation(queueRecordId);
+            var items = _mapper.Map<DeliveryRequest>(records);
+
+            return items;
         }
     }
 }

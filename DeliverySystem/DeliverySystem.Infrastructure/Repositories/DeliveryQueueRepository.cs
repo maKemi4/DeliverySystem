@@ -13,7 +13,7 @@ namespace DeliverySystem.Infrastructure.Repositories
     {
         Task Add(DeliveryQueueFullRequestInformation record);
         Task<DeliveryQueueFullRequestInformation> GetRequestInformation(int queueRecordId);
-        Task<IEnumerable<DeliveryQueueRecords>> GetAll(bool onlyNotCompleted = false);
+        Task<IEnumerable<DeliveryQueueRecord>> GetAll(bool onlyNotCompleted = false);
         
     }
 
@@ -35,7 +35,7 @@ namespace DeliverySystem.Infrastructure.Repositories
         }
 
         //GetAll: Якщо onlyNotCompleted = false виводить всі заявки, якщо onlyNotCompleted = true тільки ті, які невиконані
-        public async Task<IEnumerable<DeliveryQueueRecords>> GetAll(bool onlyNotCompleted = false) 
+        public async Task<IEnumerable<DeliveryQueueRecord>> GetAll(bool onlyNotCompleted = false) 
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -44,7 +44,7 @@ namespace DeliverySystem.Infrastructure.Repositories
                     {  "@OnlyNotCompleted", onlyNotCompleted }
                 };
                 var parameters = new DynamicParameters(dictionary);
-                var records = await connection.QueryAsync<DeliveryQueueRecords>("p_GetDeliveryQueueRecords", parameters,
+                var records = await connection.QueryAsync<DeliveryQueueRecord>("p_GetDeliveryQueueRecords", parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
 
                 return records;

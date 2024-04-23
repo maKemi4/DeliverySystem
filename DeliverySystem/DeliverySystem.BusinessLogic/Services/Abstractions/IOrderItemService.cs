@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace DeliverySystem.BusinessLogic.Services.Abstractions
 {
-    public interface IDeliveryQueueService
+    public interface IOrderItemService
     {
-        Task AddRequest(DeliveryRequest deliveryRequest);
-        Task<IEnumerable<DeliveryQueueItem>> GetRequests(bool status);
-        Task<DeliveryRequest> GetInformation(int queueRecordId);
+        Task<int> CreateOrder(int NumOfOrders, string executorName, string executorSurname, string organizationName);
+        Task<IEnumerable<OrderItem>> GetOrderItems(int orderId);
     }
 }

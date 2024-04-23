@@ -24,6 +24,6 @@ namespace DeliverySystem.Infrastructure.Models
         public int DeliveryQueueId { get; set; }
         public int Importance { get; set; }
         public decimal ImportanceRate { get; set; }
-        public bool isCompleted { get; set; }
+        public bool IsCompleted { get; set; }
     }
 }

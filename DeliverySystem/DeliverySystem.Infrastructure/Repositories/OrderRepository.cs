@@ -13,7 +13,7 @@ namespace DeliverySystem.Infrastructure.Repositories
     public interface IOrderRepository
     {
         Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds, string executorName, string executorSurname, string organizationName);
-        Task<IEnumerable<OrderItem>> GetOrderItems(int orderId);
+        Task<IEnumerable<OrderRecord>> GetOrderItems(int orderId);
     }
 
     public class OrderRepository : IOrderRepository
@@ -44,7 +44,7 @@ namespace DeliverySystem.Infrastructure.Repositories
             } 
         }
 
-        public async Task<IEnumerable<OrderItem>> GetOrderItems(int orderId)
+        public async Task<IEnumerable<OrderRecord>> GetOrderItems(int orderId)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -54,7 +54,7 @@ namespace DeliverySystem.Infrastructure.Repositories
                 };
 
                 var parameters = new DynamicParameters(dictionary);
-                var records = await connection.QueryAsync<OrderItem>("p_GetOrderItems", parameters,
+                var records = await connection.QueryAsync<OrderRecord>("p_GetOrderItems", parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
 
                 return records;

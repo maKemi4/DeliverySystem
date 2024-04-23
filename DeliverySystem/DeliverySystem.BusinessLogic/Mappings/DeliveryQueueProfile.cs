@@ -21,7 +21,6 @@ namespace DeliverySystem.BusinessLogic.Mappings
                 .ForMember(dest => dest.SituationDescription, opt => opt.MapFrom(src => src.Requirements.SituationDescription))
                 .ForMember(dest => dest.Importance, opt => opt.MapFrom(src => src.Requirements.Importance))
                 .ForMember(dest => dest.ImportanceRate, opt => opt.Ignore())
-                .ForMember(dest => dest.isCompleted, opt => opt.MapFrom(src => src.Requirements.isCompleted))
 
                 .ForMember(dest => dest.CustomerName, opt => opt.MapFrom(src => src.ContactInformation.CustomerName))
                 .ForMember(dest => dest.CustomerSurname, opt => opt.MapFrom(src => src.ContactInformation.CustomerSurname))
@@ -31,8 +30,25 @@ namespace DeliverySystem.BusinessLogic.Mappings
                 .ForMember(dest => dest.Latitude, opt => opt.MapFrom(src => src.ContactInformation.Latitude))
                 .ForMember(dest => dest.Longtitude, opt => opt.MapFrom(src => src.ContactInformation.Longtitude));
 
-            CreateMap<DeliveryRequest, DeliveryQueueItem>()
-                ;
+            CreateMap<DeliveryQueueRecord, DeliveryQueueItem>()
+                .ForMember(dest => dest.DeliveryQueueId, opt => opt.MapFrom(src => src.DeliveryQueueId))
+                .ForMember(dest => dest.ImportanceRate, opt => opt.MapFrom(src => src.ImportanceRate))
+                .ForMember(dest => dest.SubmissionDate, opt => opt.MapFrom(src => src.SubmissionDate));
+
+            CreateMap<CompletingStatus, DeliveryQueueFullRequestInformation>()
+                 .ForMember(dest => dest.IsCompleted, opt => opt.MapFrom(src => src.IsCompleted));
+
+            CreateMap<DeliveryQueueRecord, CompletingStatus>()
+                 .ForMember(dest => dest.IsCompleted, opt => opt.MapFrom(src => src.IsCompleted));
+
+            CreateMap<OrderRecord, OrderItem>()
+                .ForMember(dest => dest.OrderId, opt => opt.MapFrom(src => src.OrderId))
+                .ForMember(dest => dest.DeliveryRequestId, opt => opt.MapFrom(src => src.DeliveryRequestId))
+                .ForMember(dest => dest.Longitude, opt => opt.MapFrom(src => src.Longitude))
+                .ForMember(dest => dest.Latitude, opt => opt.MapFrom(src => src.Latitude))
+                .ForMember(dest => dest.Importance, opt => opt.MapFrom(src => src.Importance))
+                .ForMember(dest => dest.LocalityName, opt => opt.MapFrom(src => src.LocalityName))
+                .ForMember(dest => dest.ImportanceRate, opt => opt.MapFrom(src => src.ImportanceRate));
         }
     }
 }

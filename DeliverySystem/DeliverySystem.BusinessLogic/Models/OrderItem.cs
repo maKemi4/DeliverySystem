@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DeliverySystem.Infrastructure.Models
+namespace DeliverySystem.BusinessLogic.Models
 {
     public class OrderItem
     {
