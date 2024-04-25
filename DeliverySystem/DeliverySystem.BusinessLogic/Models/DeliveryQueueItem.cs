@@ -11,6 +11,6 @@ namespace DeliverySystem.BusinessLogic.Models
         public int DeliveryQueueId { get; set; }
         public decimal ImportanceRate { get; set; }
         public DateTime SubmissionDate { get; set; }
-        //public bool IsCompleted { get; set; }
+        public bool IsCompleted { get; set; }
     }
 }

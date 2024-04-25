@@ -9,7 +9,7 @@ namespace DeliverySystem.BusinessLogic.Services.Abstractions
 {
     public interface IOrderItemService
     {
-        Task<int> CreateOrder(int NumOfOrders, string executorName, string executorSurname, string organizationName);
+        Task<int> CreateOrder(string executorName, string executorSurname, string organizationName);
         Task<IEnumerable<OrderItem>> GetOrderItems(int orderId);
     }
 }

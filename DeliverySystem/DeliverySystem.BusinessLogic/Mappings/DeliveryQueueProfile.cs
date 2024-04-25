@@ -16,7 +16,6 @@ namespace DeliverySystem.BusinessLogic.Mappings
             CreateMap<DeliveryRequest, DeliveryQueueFullRequestInformation>()
                 .ForMember(dest => dest.NumOfVictims, opt => opt.MapFrom(src => src.Requirements.NumOfVictims))
                 .ForMember(dest => dest.NumOfSeveralyVictims, opt => opt.MapFrom(src => src.Requirements.NumOfSeveralyVictims))
-                //.ForMember(dest => dest.NeededMecine, opt => opt.MapFrom(src => src.Requirements.NumOfSeveralyVictims))
                 .ForMember(dest => dest.ConditionType, opt => opt.MapFrom(src => src.Requirements.ConditionType))
                 .ForMember(dest => dest.SituationDescription, opt => opt.MapFrom(src => src.Requirements.SituationDescription))
                 .ForMember(dest => dest.Importance, opt => opt.MapFrom(src => src.Requirements.Importance))
@@ -33,22 +32,19 @@ namespace DeliverySystem.BusinessLogic.Mappings
             CreateMap<DeliveryQueueRecord, DeliveryQueueItem>()
                 .ForMember(dest => dest.DeliveryQueueId, opt => opt.MapFrom(src => src.DeliveryQueueId))
                 .ForMember(dest => dest.ImportanceRate, opt => opt.MapFrom(src => src.ImportanceRate))
-                .ForMember(dest => dest.SubmissionDate, opt => opt.MapFrom(src => src.SubmissionDate));
+                .ForMember(dest => dest.SubmissionDate, opt => opt.MapFrom(src => src.SubmissionDate))
+                .ForMember(dest => dest.IsCompleted, opt => opt.MapFrom(src => src.IsCompleted));
 
-            CreateMap<CompletingStatus, DeliveryQueueFullRequestInformation>()
-                 .ForMember(dest => dest.IsCompleted, opt => opt.MapFrom(src => src.IsCompleted));
-
-            CreateMap<DeliveryQueueRecord, CompletingStatus>()
-                 .ForMember(dest => dest.IsCompleted, opt => opt.MapFrom(src => src.IsCompleted));
-
-            CreateMap<OrderRecord, OrderItem>()
-                .ForMember(dest => dest.OrderId, opt => opt.MapFrom(src => src.OrderId))
-                .ForMember(dest => dest.DeliveryRequestId, opt => opt.MapFrom(src => src.DeliveryRequestId))
-                .ForMember(dest => dest.Longitude, opt => opt.MapFrom(src => src.Longitude))
-                .ForMember(dest => dest.Latitude, opt => opt.MapFrom(src => src.Latitude))
-                .ForMember(dest => dest.Importance, opt => opt.MapFrom(src => src.Importance))
+            CreateMap<DeliveryQueueFullRequestInformation, DeliveryRequestShort>()
+                .ForMember(dest => dest.CustomerFullName, opt => opt.MapFrom(src => $"{src.CustomerName} {src.CustomerSurname}"))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.PhoneNum, opt => opt.MapFrom(src => src.PhoneNum))
                 .ForMember(dest => dest.LocalityName, opt => opt.MapFrom(src => src.LocalityName))
-                .ForMember(dest => dest.ImportanceRate, opt => opt.MapFrom(src => src.ImportanceRate));
+                .ForMember(dest => dest.NumOfVictims, opt => opt.MapFrom(src => src.NumOfVictims))
+                .ForMember(dest => dest.NumOfSeveralyVictims, opt => opt.MapFrom(src => src.NumOfSeveralyVictims))
+                .ForMember(dest => dest.SituationDescription, opt => opt.MapFrom(src => src.SituationDescription))
+                .ForMember(dest => dest.Importance, opt => opt.MapFrom(src => src.Importance))
+                .ForMember(dest => dest.IsCompleted, opt => opt.MapFrom(src => src.IsCompleted));
         }
     }
 }

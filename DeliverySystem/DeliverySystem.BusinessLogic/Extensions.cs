@@ -20,7 +20,6 @@ namespace DeliverySystem.BusinessLogic
             services.AddTransient<IOrderItemService, OrderItemService>();
 
             services.AddAutoMapper(typeof(DeliveryQueueService));
-            services.AddAutoMapper(typeof(OrderItemService)); //??
 
             return services;
 

@@ -28,7 +28,6 @@ namespace DeliverySystem.BusinessLogic.Models
     {
         public int NumOfVictims { get; set; }
         public int? NumOfSeveralyVictims { get; set; }
-        public IEnumerable<string> NeededMediсine { get; set; }
         public ConditionType ConditionType { get; set; }
         public string SituationDescription { get; set; }
         public int Importance { get; set; }

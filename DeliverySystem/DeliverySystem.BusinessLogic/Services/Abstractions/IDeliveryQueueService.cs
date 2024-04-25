@@ -11,6 +11,6 @@ namespace DeliverySystem.BusinessLogic.Services.Abstractions
     {
         Task AddRequest(DeliveryRequest deliveryRequest);
         Task<IEnumerable<DeliveryQueueItem>> GetRequests(bool status);
-        Task<DeliveryRequest> GetInformation(int queueRecordId);
+        Task<DeliveryRequestShort> GetInformation(int queueRecordId);
     }
 }

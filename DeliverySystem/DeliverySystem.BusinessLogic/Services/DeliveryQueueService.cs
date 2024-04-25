@@ -44,10 +44,10 @@ namespace DeliverySystem.BusinessLogic.Services
             return items;
         }
 
-        public async Task<DeliveryRequest> GetInformation(int queueRecordId)
+        public async Task<DeliveryRequestShort> GetInformation(int queueRecordId)
         {
             var records = await _deliveryQueueRepository.GetRequestInformation(queueRecordId);
-            var items = _mapper.Map<DeliveryRequest>(records);
+            var items = _mapper.Map<DeliveryRequestShort>(records);
 
             return items;
         }
