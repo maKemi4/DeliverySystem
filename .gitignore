@@ -20,3 +20,6 @@
 /DeliverySystem/DeliverySystem.WebAPI/DeliverySystem.WebAPI/Controllers/WeatherForecastController.cs
 /DeliverySystem/DeliverySystem.WebAPI/DeliverySystem.WebAPI/WeatherForecast.cs
 /DeliverySystem/DeliverySystem.Database/dbo/Stored Procedures/p_GetDeliveryQueueRecords.sql
+/DeliverySystem/DeliverySystem.BusinessLogic/bin/Debug/net8.0
+/DeliverySystem/DeliverySystem.Infrastructure/bin/Debug/net8.0
+/DeliverySystem/DeliverySystem.Shared/bin/Debug/net8.0
