@@ -1,20 +1,17 @@
 ﻿CREATE PROCEDURE [dbo].[p_UpdateDeliveryQueueRecord]
-	@CustomerName varchar(32) not null,
-	@CustomerSurname varchar (32) not null, 
+	@CustomerName varchar(32) null,
+	@CustomerSurname varchar (32) null, 
 	@Email varchar (32) null,
-	@PhoneNum varchar(12) not null,
-	@LocalityName varchar (32) not null,
-	@Latitude decimal(18,2) not null,
-	@Longitude decimal(18,2) not null,
-	@NumOfVictims int not null,
+	@PhoneNum varchar(12) null,
+	@LocalityName varchar (32) null,
+	@Latitude decimal(18,2) null,
+	@Longitude decimal(18,2) null,
+	@NumOfVictims int null,
 	@NumOfSeveralyVictims int null,
-	@ConditionType int not null,
+	@ConditionType int null,
 	@SituationDescription varchar(50) null,
-	@Importance int not null, 
-	@SubmissionDate datetime not null,
-	@ImportanceRate decimal(18,2) not null,
-	@IsCompleted bit not null 
-
+	@Importance int null, 
+	@ImportanceRate decimal(18,2) null
 AS
 	DECLARE @CustomerId INT;
 	DECLARE @DeliveryRequestId INT;
@@ -37,7 +34,7 @@ AS
 
 	SELECT @DeliveryRequestId = SCOPE_IDENTITY();
 
-	INSERT INTO DeliveryQueue (DeliveryRequestId, ImportanceRate, IsCompleted, SubmissionDate)
-	VALUES (@DeliveryRequestId, @ImportanceRate, @IsCompleted, @SubmissionDate)
+	INSERT INTO DeliveryQueue (DeliveryRequestId, ImportanceRate)
+	VALUES (@DeliveryRequestId, @ImportanceRate)
 
 RETURN 0

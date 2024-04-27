@@ -29,7 +29,7 @@ namespace DeliverySystem.Infrastructure.Repositories
             {
                 var dictionary = new Dictionary<string, object>()
                 {
-                    { "@DeliveryQueueRecordIds", ids },
+                    { "@DeliveryQueueItemIds", ids },
                     { "@ExecutorName", executorName },
                     { "@ExecutorSurname", executorSurname },
                     { "@OrganizationName", organizationName }

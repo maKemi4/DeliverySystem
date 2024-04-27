@@ -1,6 +1,5 @@
 ﻿using DeliverySystem.BusinessLogic.Models;
 using DeliverySystem.BusinessLogic.Services.Abstractions;
-using DeliverySystem.WebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -18,20 +17,24 @@ namespace DeliverySystem.WebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddRequest(AddDeliveryRequestModel deliveryRequest)
+        public async Task<IActionResult> AddRequest(DeliveryRequest deliveryRequest)
         {
-            var request = new DeliveryRequest() { };
-
-
-
+            await _deliveryQueueService.AddRequest(deliveryRequest);
             return Ok();
         }
 
         [HttpGet]
-        public async Task<IEnumerable<DeliveryQueueItem>> GetAll()
+        public async Task<ActionResult<IEnumerable<DeliveryQueueItem>>> GetAll()
         {
-            var items = await _deliveryQueueService.GetRequests();
-            return items;
+            var items = await _deliveryQueueService.GetRequests(false);
+            return Ok(items);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<DeliveryRequestShort>> GetRequestDetailsById(int id)
+        {
+            var item = await _deliveryQueueService.GetInformation(id);
+            return Ok(item);
         }
     }
 }

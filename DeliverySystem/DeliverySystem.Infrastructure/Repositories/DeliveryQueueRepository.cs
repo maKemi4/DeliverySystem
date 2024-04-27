@@ -25,8 +25,22 @@ namespace DeliverySystem.Infrastructure.Repositories
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                var dictionary = ParametersHelper.ToDictionary(record);
-                var parmDictionary = dictionary.Select(d => new { Key = $"@{d.Key}", d.Value }).ToDictionary(d => d.Key, d => d.Value);
+                var dictionary = new Dictionary<string, object>()
+                {
+                    {  "@CustomerName", record.CustomerName },
+                    {  "@CustomerSurname", record.CustomerSurname },
+                    {  "@Email", record.Email },
+                    {  "@PhoneNum", record.PhoneNum },
+                    {  "@LocalityName", record.LocalityName },
+                    {  "@Latitude", record.Latitude },
+                    {  "@Longitude", record.Longtitude },
+                    {  "@NumOfVictims", record.NumOfVictims },
+                    {  "@NumOfSeveralyVictims", record.NumOfSeveralyVictims },
+                    {  "@ConditionType", record.ConditionType },
+                    {  "@SituationDescription", record.SituationDescription },
+                    {  "@Importance", record.Importance },
+                    {  "@ImportanceRate", record.ImportanceRate },
+                };
                 var parameters = new DynamicParameters(dictionary);
 
                 await connection.QueryAsync<DeliveryQueueFullRequestInformation>("p_UpdateDeliveryQueueRecord", parameters,

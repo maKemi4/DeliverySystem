@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[DeliveryQueue]
 (
-	[DeliveryQueueId] INT NOT NULL PRIMARY KEY,
-	[SubmissionDate] DATETIME NOT NULL, 
+	[DeliveryQueueId] INT PRIMARY KEY IDENTITY,
+	[SubmissionDate] DATETIME NOT NULL DEFAULT GETDATE(), 
     [ImportanceRate] DECIMAL(18, 2) NOT NULL, 
     [IsCompleted] BIT NOT NULL DEFAULT 0, 
     [DeliveryRequestId] INT NOT NULL, 

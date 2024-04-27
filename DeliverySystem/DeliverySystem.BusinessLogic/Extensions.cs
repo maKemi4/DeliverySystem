@@ -1,5 +1,6 @@
 ﻿using DeliverySystem.BusinessLogic.Services;
 using DeliverySystem.BusinessLogic.Services.Abstractions;
+using DeliverySystem.Infrastructure.DistanceAndTimeFinding;
 using DeliverySystem.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -18,6 +19,9 @@ namespace DeliverySystem.BusinessLogic
             services.AddTransient<IDeliveryQueueRepository, DeliveryQueueRepository>();
             services.AddTransient<IDeliveryQueueImportanceService, DeliveryQueueImportanceService>();
             services.AddTransient<IOrderItemService, OrderItemService>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IOptimalPathFindingService, OptimalPathFindingService>();
+            services.AddTransient<IDistanceAndTimeFindingService, DistanceAndTimeFindingService>();
 
             services.AddAutoMapper(typeof(DeliveryQueueService));
 

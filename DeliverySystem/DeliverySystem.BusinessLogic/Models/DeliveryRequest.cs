@@ -31,6 +31,5 @@ namespace DeliverySystem.BusinessLogic.Models
         public ConditionType ConditionType { get; set; }
         public string SituationDescription { get; set; }
         public int Importance { get; set; }
-        public decimal ImportanceRate { get; set; }
     }
 }

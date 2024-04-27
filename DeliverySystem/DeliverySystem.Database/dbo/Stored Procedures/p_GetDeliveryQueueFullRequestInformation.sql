@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[p_GetDeliveryQueueFullRequestInformation]
-    @DeliveryQueueId int not null
+    @DeliveryQueueId int null
 AS
 BEGIN
     SELECT dq.DeliveryQueueId, dq.ImportanceRate, dq.IsCompleted, dq.SubmissionDate, dr.LocalityName, dr.Importance,

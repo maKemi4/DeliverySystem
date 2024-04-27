@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeliverySystem.BusinessLogic.Models
 {
-    public class DeliveryRequestShort : DeliveryRequest
+    public class DeliveryRequestShort
     {
         public string CustomerFullName { get; set; }
         public string Email {  get; set; }

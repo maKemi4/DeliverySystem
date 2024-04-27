@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[DeliveryRequest]
 (
-	[DeliveryRequestId] INT NOT NULL PRIMARY KEY, 
+	[DeliveryRequestId] INT PRIMARY KEY IDENTITY, 
     [LocalityName] VARCHAR(32) NOT NULL, 
-    [Latitude] DECIMAL(18, 2) NOT NULL, 
-    [Longitude] DECIMAL(18, 2) NOT NULL, 
+    [Latitude] DECIMAL(18, 6) NOT NULL, 
+    [Longitude] DECIMAL(18, 6) NOT NULL, 
     [NumOfVictims] INT NOT NULL, 
     [NumOfSeveralyVictims] INT NOT NULL, 
     [ConditionType] INT NOT NULL , 
