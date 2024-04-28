@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DeliverySystem.BusinessLogic.Services.Abstractions
 {
-    public interface IOrderItemService
+    public interface IOrderExecutorService
     {
-        Task<int> CreateOrder(int orderExecutorId);
-        Task<IEnumerable<OrderItem>> GetOrderItems(int orderId);
+        Task<int> AddOrderExecutor(OrderExecutor orderExecutor);
+        Task<OrderExecutorInfo> GetOrderExecutor(int orderExecutorId);
     }
 }

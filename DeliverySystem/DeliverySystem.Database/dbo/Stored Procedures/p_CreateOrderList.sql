@@ -1,21 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[p_CreateOrderList]
 	@DeliveryQueueItemIds NVARCHAR(255),
-	@ExecutorName VARCHAR(50),
-	@ExecutorSurname VARCHAR(50),
-	@OrganizationName VARCHAR(50)
+	@OrderExecutorId int
 AS
-	DECLARE @OrderExecutorId INT;
-	IF NOT EXISTS(SELECT TOP 1 * FROM OrderExecutor WHERE ExecutorName = @ExecutorName and ExecutorSurname = @ExecutorSurname)
-	BEGIN 
-		INSERT INTO OrderExecutor (ExecutorName, ExecutorSurname, OrganizationName)
-		VALUES (@ExecutorName, @ExecutorSurname, @OrganizationName)
-		SELECT @OrderExecutorId = SCOPE_IDENTITY();
-	END
-	ELSE
-	BEGIN 
-		SELECT @OrderExecutorId = OrderExecutorId FROM OrderExecutor WHERE ExecutorName = @ExecutorName and ExecutorSurname = @ExecutorSurname;
-	END
-
 	INSERT INTO [Order] (OrderExecutorId)
 	VALUES (@OrderExecutorId)
 

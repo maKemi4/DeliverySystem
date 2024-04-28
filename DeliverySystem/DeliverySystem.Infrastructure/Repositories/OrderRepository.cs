@@ -12,7 +12,7 @@ namespace DeliverySystem.Infrastructure.Repositories
 {
     public interface IOrderRepository
     {
-        Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds, string executorName, string executorSurname, string organizationName);
+        Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds, int orderExecutorId);
         Task<IEnumerable<OrderRecord>> GetOrderItems(int orderId);
     }
 
@@ -20,7 +20,7 @@ namespace DeliverySystem.Infrastructure.Repositories
     {
         private readonly string _connectionString = "Data Source=DESKTOP-MUGRJ5P;Initial Catalog=DeliverySystem;Integrated Security=True;Encrypt=False";
 
-        public async Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds, string executorName, string executorSurname, string organizationName)
+        public async Task<int> CreateOrder(IEnumerable<int> deliveryQueueRecordIds, int orderExecutorId)
         {
             if (!deliveryQueueRecordIds.Any()) return -1;
             var ids = string.Join(",", deliveryQueueRecordIds);
@@ -30,17 +30,15 @@ namespace DeliverySystem.Infrastructure.Repositories
                 var dictionary = new Dictionary<string, object>()
                 {
                     { "@DeliveryQueueItemIds", ids },
-                    { "@ExecutorName", executorName },
-                    { "@ExecutorSurname", executorSurname },
-                    { "@OrganizationName", organizationName }
+                    { "@OrderExecutorId", orderExecutorId },
                 };
 
                 var parameters = new DynamicParameters(dictionary);
 
-                var record = await connection.QueryFirstOrDefaultAsync<int>("p_CreateOrderList", parameters,
+                var orderId = await connection.QueryFirstOrDefaultAsync<int>("p_CreateOrderList", parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
 
-                return record;
+                return orderId;
             } 
         }
 

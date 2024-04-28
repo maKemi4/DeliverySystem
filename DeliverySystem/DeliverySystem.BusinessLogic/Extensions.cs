@@ -17,11 +17,13 @@ namespace DeliverySystem.BusinessLogic
         {
             services.AddTransient<IDeliveryQueueService, DeliveryQueueService>();
             services.AddTransient<IDeliveryQueueRepository, DeliveryQueueRepository>();
+            services.AddTransient<IOrderExecutorRepository, OrderExecutorRepository>();
             services.AddTransient<IDeliveryQueueImportanceService, DeliveryQueueImportanceService>();
             services.AddTransient<IOrderItemService, OrderItemService>();
             services.AddTransient<IOrderRepository, OrderRepository>();
             services.AddTransient<IOptimalPathFindingService, OptimalPathFindingService>();
             services.AddTransient<IDistanceAndTimeFindingService, DistanceAndTimeFindingService>();
+            services.AddTransient<IOrderExecutorService, OrderExecutorService>();
 
             services.AddAutoMapper(typeof(DeliveryQueueService));
 

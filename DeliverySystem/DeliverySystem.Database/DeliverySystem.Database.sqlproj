@@ -76,6 +76,8 @@
     <Build Include="dbo\Tables\Customer.sql" />
     <Build Include="dbo\Stored Procedures\p_GetDeliveryQueueFullRequestInformation.sql" />
     <Build Include="dbo\Stored Procedures\p_GetOrderItems.sql" />
+    <Build Include="dbo\Stored Procedures\p_UpdateOrderExecutor.sql" />
+    <Build Include="dbo\Stored Procedures\p_GetOrderExecutor.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DeliverySystem.Database.refactorlog" />

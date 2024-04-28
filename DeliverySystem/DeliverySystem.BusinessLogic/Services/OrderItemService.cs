@@ -26,13 +26,13 @@ namespace DeliverySystem.BusinessLogic.Services
             _deliveryQueueRepository = deliveryQueueRepository;
         }
 
-        public async Task<int> CreateOrder(string executorName, string executorSurname, string organizationName)
+        public async Task<int> CreateOrder(int orderExecutorId)
         {
             var records = await _deliveryQueueRepository.GetAll(true);
             var selectedOrders = records.OrderByDescending(i => i.ImportanceRate).Take(5); //MB TODO
             var selecetedIds = selectedOrders.Select(item => item.DeliveryQueueId);
 
-            var orderId = await _orderRepository.CreateOrder(selecetedIds, executorName, executorSurname, organizationName);
+            var orderId = await _orderRepository.CreateOrder(selecetedIds, orderExecutorId);
 
             return orderId;
         }

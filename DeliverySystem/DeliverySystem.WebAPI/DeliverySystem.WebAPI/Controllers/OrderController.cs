@@ -16,9 +16,9 @@ namespace DeliverySystem.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<int>> CreateOrder(string name, string surname, string organization)
+        public async Task<ActionResult<int>> CreateOrder(int orderExecutorId)
         {
-            var orderId = await _orderItemService.CreateOrder(name, surname, organization);
+            var orderId = await _orderItemService.CreateOrder(orderExecutorId);
             return Ok(orderId);
         }
 
