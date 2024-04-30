@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DeliverySystem.Shared.Enumerations
 {
-    public enum ConditionType
+    public enum AgeGroup
     {
-        Default = 0, 
-        Bombing = 1,
-        NaturalDisasters = 2, 
-        InfrastructureDamaged = 3
+        _1_14 = 1,
+        _15_21 = 2,
+        _22_39 = 3,
+        _40_90 = 4
     }
 }

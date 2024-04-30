@@ -29,7 +29,9 @@ namespace DeliverySystem.BusinessLogic.Models
         public int NumOfVictims { get; set; }
         public int? NumOfSeveralyVictims { get; set; }
         public ConditionType ConditionType { get; set; }
+        public Importance Importance { get; set; }
+        public AgeGroup AgeGroup { get; set; }
+        public InjuriesType InjuriesType { get; set; }
         public string SituationDescription { get; set; }
-        public int Importance { get; set; }
     }
 }

@@ -19,11 +19,14 @@ namespace DeliverySystem.Infrastructure.Models
         public int NumOfVictims { get; set; }
         public int NumOfSeveralyVictims { get; set; }
         public int ConditionType { get; set; }
+        public int AgeGroup { get; set; }
+        public int InjuriesType { get; set; }
         public string SituationDescription { get; set; }
 
         public int DeliveryQueueId { get; set; }
         public int Importance { get; set; }
         public decimal ImportanceRate { get; set; }
         public bool IsCompleted { get; set; }
+
     }
 }

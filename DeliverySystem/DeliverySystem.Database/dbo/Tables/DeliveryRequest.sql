@@ -7,8 +7,10 @@
     [NumOfVictims] INT NOT NULL, 
     [NumOfSeveralyVictims] INT NOT NULL, 
     [ConditionType] INT NOT NULL , 
+    [AgeGroup] INT NOT NULL , 
+    [InjuriesType] INT NOT NULL , 
+    [Importance] INT NOT NULL,
     [SituationDescription] VARCHAR(50) NULL, 
-    [Importance] INT NOT NULL, 
     [CustomerId] INT NOT NULL, 
     CONSTRAINT [FK_DeliveryRequest_Customer_CustomerId] FOREIGN KEY ([CustomerId]) REFERENCES [Customer]([CustomerId])
 )

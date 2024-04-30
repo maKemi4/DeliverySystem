@@ -14,7 +14,7 @@ namespace DeliverySystem.Infrastructure.Repositories
         Task Add(DeliveryQueueFullRequestInformation record);
         Task<DeliveryQueueFullRequestInformation> GetRequestInformation(int queueRecordId);
         Task<IEnumerable<DeliveryQueueRecord>> GetAll(bool onlyNotCompleted = false);
-        
+        Task<int> GetAverageNumOfVictims();
     }
 
     public class DeliveryQueueRepository : IDeliveryQueueRepository
@@ -37,6 +37,8 @@ namespace DeliverySystem.Infrastructure.Repositories
                     {  "@NumOfVictims", record.NumOfVictims },
                     {  "@NumOfSeveralyVictims", record.NumOfSeveralyVictims },
                     {  "@ConditionType", record.ConditionType },
+                    {  "@AgeGroup", record.AgeGroup },
+                    {  "@InjuriesType", record.InjuriesType },
                     {  "@SituationDescription", record.SituationDescription },
                     {  "@Importance", record.Importance },
                     {  "@ImportanceRate", record.ImportanceRate },
@@ -79,6 +81,16 @@ namespace DeliverySystem.Infrastructure.Repositories
                     commandType: System.Data.CommandType.StoredProcedure);
 
                 return record;
+            }
+        }
+
+        public async Task<int> GetAverageNumOfVictims()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var result = await connection.QueryFirstOrDefaultAsync<int>("p_GetAverageNumOfVictims", commandType: System.Data.CommandType.StoredProcedure);
+
+                return result;
             }
         }
     }
