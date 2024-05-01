@@ -17,4 +17,3 @@ namespace DeliverySystem.BusinessLogic.Services
         }
     }
 }
-//TODO: Реалізувати алгоритм вирішення задачі Комівояжера
