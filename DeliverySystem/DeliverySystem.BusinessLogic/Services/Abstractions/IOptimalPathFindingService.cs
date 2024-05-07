@@ -1,14 +1,19 @@
-﻿using DeliverySystem.Infrastructure.DistanceAndTimeFinding.Models;
+﻿using DeliverySystem.BusinessLogic.Models;
+using DeliverySystem.Infrastructure.DistanceAndTimeFinding.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DeliverySystem.BusinessLogic.Services.OptimalPathFindingService;
 
 namespace DeliverySystem.BusinessLogic.Services.Abstractions
 {
     public interface IOptimalPathFindingService
     {
-        Task<IEnumerable<string>> FindPath();
+        PathResult FindFinalPath(IEnumerable<int> vertices, 
+            double[,] adjacencyMatrix, 
+            IEnumerable<double> importanceRates,
+            bool minImportanceRate);
     }
 }

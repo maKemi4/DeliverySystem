@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeliverySystem.BusinessLogi
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DeliverySystem.Database", "DeliverySystem.Database\DeliverySystem.Database.sqlproj", "{7C50E051-5293-45C6-9588-F60114024FB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliverySystem.Shared", "DeliverySystem.Shared\DeliverySystem.Shared.csproj", "{7DAA72D8-922F-4ABF-8024-72D25D9DA46F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeliverySystem.Shared", "DeliverySystem.Shared\DeliverySystem.Shared.csproj", "{7DAA72D8-922F-4ABF-8024-72D25D9DA46F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliverySystem.Tests", "DeliverySystem.Tests\DeliverySystem.Tests.csproj", "{9875EC9D-089F-4284-B7C5-2A0F1B7B2F55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{7DAA72D8-922F-4ABF-8024-72D25D9DA46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DAA72D8-922F-4ABF-8024-72D25D9DA46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DAA72D8-922F-4ABF-8024-72D25D9DA46F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9875EC9D-089F-4284-B7C5-2A0F1B7B2F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9875EC9D-089F-4284-B7C5-2A0F1B7B2F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9875EC9D-089F-4284-B7C5-2A0F1B7B2F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9875EC9D-089F-4284-B7C5-2A0F1B7B2F55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

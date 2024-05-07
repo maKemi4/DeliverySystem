@@ -1,4 +1,6 @@
-﻿using DeliverySystem.BusinessLogic.Services.Abstractions;
+﻿using DeliverySystem.BusinessLogic.Models;
+using DeliverySystem.BusinessLogic.Services.Abstractions;
+using DeliverySystem.Infrastructure.DistanceAndTimeFinding;
 using DeliverySystem.Infrastructure.DistanceAndTimeFinding.Models;
 using System;
 using System.Collections;
@@ -11,9 +13,18 @@ namespace DeliverySystem.BusinessLogic.Services
 {
     public class OptimalPathFindingService : IOptimalPathFindingService
     {
-        public Task<IEnumerable<string>> FindPath()
+        public PathResult FindFinalPath(IEnumerable<int> vertices,
+            double[,] adjacencyMatrix, 
+            IEnumerable<double> importanceRates,
+            bool minImportanceRate)
         {
-            return Task.FromResult<IEnumerable<string>>(Array.Empty<string>());
+            TSPSolver tspSolverFirst = new TSPSolver(vertices, adjacencyMatrix, importanceRates.ToList(), minImportanceRate);
+
+            double timeCost;
+            double importanceRateCost;
+            IEnumerable<int> shortestPath = tspSolverFirst.Solve(out timeCost, out importanceRateCost);
+
+            return new PathResult(shortestPath, timeCost, importanceRateCost);
         }
     }
 }
