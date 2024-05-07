@@ -23,4 +23,5 @@
 /DeliverySystem/DeliverySystem.BusinessLogic/bin/Debug/net8.0
 /DeliverySystem/DeliverySystem.Infrastructure/bin/Debug/net8.0
 /DeliverySystem/DeliverySystem.Shared/bin/Debug/net8.0
-/DeliverySystem/DeliverySystem.Database/DeliverySystem.Database.sqlproj
+/DeliverySystem/DeliverySystem.Tests/bin/Debug/net8.0
+/DeliverySystem/DeliverySystem.Tests/obj
