@@ -32,6 +32,6 @@ namespace DeliverySystem.BusinessLogic.Models
         public Importance Importance { get; set; }
         public AgeGroup AgeGroup { get; set; }
         public InjuriesType InjuriesType { get; set; }
-        public string SituationDescription { get; set; }
+        public string SituationDescription { get; set; } //ПРИБРАТИ
     }
 }

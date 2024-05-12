@@ -28,7 +28,7 @@ namespace DeliverySystem.BusinessLogic.Services
 
         public async Task AddRequest(DeliveryRequest deliveryRequest)
         {
-            var importance = await _queueImportanceService.Calculate(deliveryRequest.Requirements);
+            var importance =  _queueImportanceService.Calculate(deliveryRequest.Requirements);
             var databaseModel = _mapper.Map<DeliveryQueueFullRequestInformation>(deliveryRequest);
 
             databaseModel.ImportanceRate = importance;

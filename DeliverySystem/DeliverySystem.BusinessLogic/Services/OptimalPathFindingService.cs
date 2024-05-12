@@ -18,7 +18,7 @@ namespace DeliverySystem.BusinessLogic.Services
             IEnumerable<double> importanceRates,
             bool minImportanceRate)
         {
-            TSPSolver tspSolverFirst = new TSPSolver(vertices, adjacencyMatrix, importanceRates.ToList(), minImportanceRate);
+            OptimalPathFindingLogic tspSolverFirst = new OptimalPathFindingLogic(vertices, adjacencyMatrix, importanceRates.ToList(), minImportanceRate);
 
             double timeCost;
             double importanceRateCost;

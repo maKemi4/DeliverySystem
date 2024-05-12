@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeliverySystem.BusinessLogic.Services
 {
-    public class TSPSolver
+    public class OptimalPathFindingLogic
     {
         private class Node
         {
@@ -20,7 +20,7 @@ namespace DeliverySystem.BusinessLogic.Services
         private readonly IList<double> _importanceRates;
         private readonly bool _minImporance;
 
-        public TSPSolver(IEnumerable<int> vertices,
+        public OptimalPathFindingLogic(IEnumerable<int> vertices,
             double[,] matrix,
             IList<double> importanceRates,
             bool minImporance)

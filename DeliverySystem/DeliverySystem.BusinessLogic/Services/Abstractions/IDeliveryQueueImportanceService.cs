@@ -9,6 +9,6 @@ namespace DeliverySystem.BusinessLogic.Services.Abstractions
 {
     public interface IDeliveryQueueImportanceService
     {
-        Task<decimal> Calculate(Requirements requirements);
+        public decimal Calculate(Requirements requirements);
     }
 }

@@ -31,20 +31,25 @@ namespace DeliverySystem.BusinessLogic.Services
             return weights;
         }
 
-        public async Task<decimal> Calculate(Requirements requirements)
+        public decimal Calculate(Requirements requirements)
         {
             var weights = GetWeight();
-            var numOfVictims = requirements.NumOfVictims;
-            var numOfSeveralyVictims = requirements.NumOfSeveralyVictims;
+            //var averageNumOfVictims = await _deliveryQueueRepository.GetAverageNumOfVictims();
+
+            var averageNumOfVictims = 25.0;
+
+            var numOfVictimsWeight = requirements.NumOfVictims / averageNumOfVictims;
+            var numOfSeveralyVictimsWeight = requirements.NumOfSeveralyVictims / averageNumOfVictims;
+
             var conditionTypeWeight = weights[$"ConditionType: {requirements.ConditionType.ToString()}"];
             var importanceWeight = weights[$"Importance: {requirements.Importance.ToString()}"];
             var ageGroupWeight = weights[$"AgeGroup: {requirements.AgeGroup.ToString()}"];
             var injuriesTypeWeight = weights[$"InjuriesType: {requirements.InjuriesType.ToString()}"];
 
-            var averageNumOfVictims = await _deliveryQueueRepository.GetAverageNumOfVictims();
+            
 
-            var importanceRate = ((numOfVictims / averageNumOfVictims) + (numOfSeveralyVictims / averageNumOfVictims)) +
-                (conditionTypeWeight + importanceWeight + ageGroupWeight + injuriesTypeWeight);
+            var importanceRate = numOfVictimsWeight + numOfSeveralyVictimsWeight + 
+                conditionTypeWeight + importanceWeight + ageGroupWeight + injuriesTypeWeight;
 
             return Convert.ToDecimal(importanceRate);
         }

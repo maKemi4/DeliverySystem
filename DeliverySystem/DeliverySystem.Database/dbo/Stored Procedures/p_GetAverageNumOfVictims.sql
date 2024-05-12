@@ -8,7 +8,7 @@ BEGIN
     
     IF @@ROWCOUNT = 0
     BEGIN
-        SET @AverageNumOfVictims = CAST((RAND() * (25 - 15) + 15) AS INT)
+        SET @AverageNumOfVictims = 25
     END
     
     SELECT @AverageNumOfVictims AS AverageNumOfVictims

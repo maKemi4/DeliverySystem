@@ -21,7 +21,7 @@ namespace DeliverySystem.BusinessLogic.Models
                 { "Importance: Medium", 10 },
                 { "Importance: High", 13 },
                 { "AgeGroup: _1_14", 15 },
-                { "AgeGroup: _15_21", 18 },
+                { "AgeGroup: _15_21", 8 },
                 { "AgeGroup: _22_39", 6 },
                 { "AgeGroup: _40_90", 11 },
                 { "InjuriesType: SkullAndBrainInjuries", 16 },
