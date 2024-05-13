@@ -10,7 +10,7 @@
 	@NumOfSeveralyVictims int null,
 	@ConditionType int null,
 	@AgeGroup int null,
-	@InjuriesType int null,
+	@NeededSpecialist int null,
 	@SituationDescription varchar(50) null,
 	@Importance int null, 
 	@ImportanceRate decimal(18,2) null
@@ -31,8 +31,8 @@ AS
 		SELECT @CustomerId = CustomerId FROM Customer WHERE CustomerName = @CustomerName AND CustomerSurname = @CustomerSurname;
 	END
 
-	INSERT INTO DeliveryRequest (CustomerId, LocalityName, Latitude, Longitude, NumOfVictims, NumOfSeveralyVictims, ConditionType, SituationDescription, Importance, AgeGroup, InjuriesType)
-	VALUES (@CustomerId, @LocalityName, @Latitude, @Longitude, @NumOfVictims, @NumOfSeveralyVictims, @ConditionType, @SituationDescription, @Importance, @AgeGroup, @InjuriesType)
+	INSERT INTO DeliveryRequest (CustomerId, LocalityName, Latitude, Longitude, NumOfVictims, NumOfSeveralyVictims, ConditionType, SituationDescription, Importance, AgeGroup, NeededSpecialist)
+	VALUES (@CustomerId, @LocalityName, @Latitude, @Longitude, @NumOfVictims, @NumOfSeveralyVictims, @ConditionType, @SituationDescription, @Importance, @AgeGroup, @NeededSpecialist)
 
 	SELECT @DeliveryRequestId = SCOPE_IDENTITY();
 

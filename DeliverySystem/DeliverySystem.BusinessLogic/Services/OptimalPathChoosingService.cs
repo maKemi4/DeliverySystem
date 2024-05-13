@@ -7,11 +7,18 @@ using System.Threading.Tasks;
 
 namespace DeliverySystem.BusinessLogic.Services
 {
-    public class OptimalPathChoosingService
+    public interface IOptimalPathChoosingService
     {
-        public PathResult ChooseOne(IEnumerable<int> vertices,
+        PathResult ChooseBestOne(IEnumerable<int> vertices,
+           double[,] matrix,
+           IEnumerable<decimal> importanceRates);
+    }
+
+    public class OptimalPathChoosingService : IOptimalPathChoosingService
+    {
+        public PathResult ChooseBestOne(IEnumerable<int> vertices,
             double[,] matrix,
-            IEnumerable<double> importanceRates)
+            IEnumerable<decimal> importanceRates)
         {
             var service = new OptimalPathFindingService();
 
@@ -29,7 +36,7 @@ namespace DeliverySystem.BusinessLogic.Services
             double pairwiseСomparisonTimeCosts = ((costByImportanceRate - costByTime) / (costByImportanceRate + costByTime));
             double pairwiseСomparisonImortanceRates = ((importanceRateByTime  - importanceRateByImptRate) / (importanceRateByTime + importanceRateByImptRate));
 
-            if (((pairwiseСomparisonTimeCosts / pairwiseСomparisonImortanceRates) * 100) > 30)
+            if (((pairwiseСomparisonTimeCosts / pairwiseСomparisonImortanceRates) * 100) < 30)
             {
                 return new PathResult(shortestPathByTime, costByTime, importanceRateByTime);
             }

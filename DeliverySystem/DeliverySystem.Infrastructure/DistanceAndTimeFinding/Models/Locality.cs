@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace DeliverySystem.Infrastructure.DistanceAndTimeFinding.Models
 {
     public record Locality (string LocalityName, 
-                            double Latitude,
-                            double Longtitude);
+                            decimal Latitude,
+                            decimal Longtitude);
 }

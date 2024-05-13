@@ -15,7 +15,7 @@ namespace DeliverySystem.BusinessLogic.Services
     {
         public PathResult FindFinalPath(IEnumerable<int> vertices,
             double[,] adjacencyMatrix, 
-            IEnumerable<double> importanceRates,
+            IEnumerable<decimal> importanceRates,
             bool minImportanceRate)
         {
             OptimalPathFindingLogic tspSolverFirst = new OptimalPathFindingLogic(vertices, adjacencyMatrix, importanceRates.ToList(), minImportanceRate);

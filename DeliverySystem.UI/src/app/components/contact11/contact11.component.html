@@ -1,0 +1,64 @@
+<div class="contact11-container thq-section-padding">
+  <div class="contact11-max-width thq-section-max-width">
+    <div class="contact11-section-title">
+      <div class="contact11-content">
+        <div id="select-executor" class="contact11-container1">
+          <h2 class="thq-heading-2">{{ heading1 }}</h2>
+          <div class="contact11-container2">
+            <select class="contact11-select">
+              <option value="Option 1">Option 1</option>
+              <option value="Option 2">Option 2</option>
+              <option value="Option 3">Option 3</option>
+            </select>
+            <button type="button" class="contact11-button button">
+              {{ button1 }}
+            </button>
+          </div>
+        </div>
+        <div id="executor-creation" class="contact11-container3">
+          <h2 class="thq-heading-2">Створіть волонтера:</h2>
+          <span class="contact11-text2">{{ text }}</span>
+          <input
+            type="text"
+            [attr.placeholder]="textinputPlaceholder"
+            class="contact11-textinput input"
+          />
+          <span class="contact11-text3">{{ text1 }}</span>
+          <input
+            type="text"
+            [attr.placeholder]="textinputPlaceholder1"
+            class="contact11-textinput1 input"
+          />
+          <span class="contact11-text4">{{ text2 }}</span>
+          <input
+            type="text"
+            [attr.placeholder]="textinputPlaceholder2"
+            class="input"
+          />
+          <button type="button" class="contact11-button1 button">
+            {{ button }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="contact11-container4">
+      <button type="submit" class="button">{{ button2 }}</button>
+    </div>
+    <div class="contact11-container5">
+      <p class="contact11-text5 thq-body-large">Побудований шлях:</p>
+      <textarea
+        id="result"
+        disabled="true"
+        [attr.placeholder]="textareaPlaceholder"
+        class="contact11-textarea textarea"
+      ></textarea>
+    </div>
+    <div class="contact11-content1 thq-flex-row">
+      <iframe
+        [attr.src]="location1GoogleMap"
+        title="Map"
+        class="contact11-iframe thq-img-ratio-16-9"
+      ></iframe>
+    </div>
+  </div>
+</div>

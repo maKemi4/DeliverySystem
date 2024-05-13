@@ -38,7 +38,7 @@ namespace DeliverySystem.Infrastructure.Repositories
                     {  "@NumOfSeveralyVictims", record.NumOfSeveralyVictims },
                     {  "@ConditionType", record.ConditionType },
                     {  "@AgeGroup", record.AgeGroup },
-                    {  "@InjuriesType", record.InjuriesType },
+                    {  "@NeededSpecialist", record.NeededSpecialist },
                     {  "@SituationDescription", record.SituationDescription },
                     {  "@Importance", record.Importance },
                     {  "@ImportanceRate", record.ImportanceRate },

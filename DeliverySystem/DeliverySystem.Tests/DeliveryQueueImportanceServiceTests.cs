@@ -22,10 +22,10 @@ namespace DeliverySystem.Tests
                 ConditionType = ConditionType.Default,
                 Importance = Importance.Low,
                 AgeGroup = AgeGroup._1_14,
-                InjuriesType = InjuriesType.BurnsAndSkinInjuries,
+                NeededSpecialist = NeededSpecialist.FieldSurgeonAndPsychiatrist,
             };
 
-            var expectedImportanceRate = 1.975;
+            var expectedImportanceRate = 2.5333333333333332d; //Обчислити
 
             //Act
             var service = new DeliveryQueueImportanceService();

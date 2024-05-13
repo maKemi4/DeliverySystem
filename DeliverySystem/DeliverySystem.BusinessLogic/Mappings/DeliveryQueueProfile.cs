@@ -18,7 +18,7 @@ namespace DeliverySystem.BusinessLogic.Mappings
                 .ForMember(dest => dest.NumOfSeveralyVictims, opt => opt.MapFrom(src => src.Requirements.NumOfSeveralyVictims))
                 .ForMember(dest => dest.ConditionType, opt => opt.MapFrom(src => src.Requirements.ConditionType))
                 .ForMember(dest => dest.AgeGroup, opt => opt.MapFrom(src => src.Requirements.AgeGroup))
-                .ForMember(dest => dest.InjuriesType, opt => opt.MapFrom(src => src.Requirements.InjuriesType))
+                .ForMember(dest => dest.NeededSpecialist, opt => opt.MapFrom(src => src.Requirements.NeededSpecialist))
                 .ForMember(dest => dest.SituationDescription, opt => opt.MapFrom(src => src.Requirements.SituationDescription))
                 .ForMember(dest => dest.Importance, opt => opt.MapFrom(src => src.Requirements.Importance))
                 .ForMember(dest => dest.ImportanceRate, opt => opt.Ignore())

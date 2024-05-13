@@ -12,23 +12,22 @@ namespace DeliverySystem.BusinessLogic.Models
         {
             return new Dictionary<string, int>()
             {
-                { "ConditionType: Default", 2 },
-                { "ConditionType: Bombing", 17 },
-                { "ConditionType: NaturalDisasters", 12 },
-                { "ConditionType: InfrastructureDamaged", 9 },
-                { "Importance: None", 1 },
+                { "ConditionType: Default", 1 },
+                { "ConditionType: Bombing", 16 },
+                { "ConditionType: NaturalDisasters", 10 },
+                { "ConditionType: InfrastructureDamaged", 7 },
+                { "Importance: None", 2 },
                 { "Importance: Low", 4 },
-                { "Importance: Medium", 10 },
-                { "Importance: High", 13 },
-                { "AgeGroup: _1_14", 15 },
-                { "AgeGroup: _15_21", 8 },
-                { "AgeGroup: _22_39", 6 },
-                { "AgeGroup: _40_90", 11 },
-                { "InjuriesType: SkullAndBrainInjuries", 16 },
-                { "InjuriesType: InternalOrgansInjuries", 14 },
-                { "InjuriesType: LimbInjuries", 7 },
-                { "InjuriesType: BurnsAndSkinInjuries", 5 },
-                { "InjuriesType: PsychologicalInjuries", 3 }
+                { "Importance: Medium", 8 },
+                { "Importance: High", 14 },
+                { "AgeGroup: _1_14", 13 },
+                { "AgeGroup: _1_21", 9 },
+                { "AgeGroup: _1_39", 6 },
+                { "AgeGroup: _1_90", 11 },
+                { "NeededSpecialist: NotNeeded", 3 },
+                { "NeededSpecialist: FieldSurgeon", 12 },
+                { "NeededSpecialist: Psychiatrist", 5 },
+                { "NeededSpecialist: FieldSurgeonAndPsychiatrist", 15 },
             };
         }
     }

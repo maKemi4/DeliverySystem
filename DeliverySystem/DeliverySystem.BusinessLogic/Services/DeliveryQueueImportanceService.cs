@@ -44,12 +44,12 @@ namespace DeliverySystem.BusinessLogic.Services
             var conditionTypeWeight = weights[$"ConditionType: {requirements.ConditionType.ToString()}"];
             var importanceWeight = weights[$"Importance: {requirements.Importance.ToString()}"];
             var ageGroupWeight = weights[$"AgeGroup: {requirements.AgeGroup.ToString()}"];
-            var injuriesTypeWeight = weights[$"InjuriesType: {requirements.InjuriesType.ToString()}"];
+            var neededSpecialistWeight = weights[$"NeededSpecialist: {requirements.NeededSpecialist.ToString()}"];
 
             
 
             var importanceRate = numOfVictimsWeight + numOfSeveralyVictimsWeight + 
-                conditionTypeWeight + importanceWeight + ageGroupWeight + injuriesTypeWeight;
+                conditionTypeWeight + importanceWeight + ageGroupWeight + neededSpecialistWeight;
 
             return Convert.ToDecimal(importanceRate);
         }

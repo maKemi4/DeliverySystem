@@ -1,0 +1,312 @@
+:host { 
+  display: contents; 
+}
+.contact-form7-contact1 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-form7-text {
+  padding-bottom: 30px;
+}
+.contact-form7-max-width {
+  align-items: center;
+  justify-content: center;
+}
+.contact-form7-form {
+  gap: var(--dl-space-space-oneandhalfunits);
+  width: 60%;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: flex-start;
+}
+.contact-form7-container {
+  gap: var(--dl-space-space-unit);
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.contact-form7-input {
+  gap: var(--dl-space-space-halfunit);
+  width: 50%;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-input01 {
+  gap: var(--dl-space-space-halfunit);
+  width: 50%;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-container1 {
+  gap: var(--dl-space-space-unit);
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.contact-form7-input02 {
+  gap: var(--dl-space-space-halfunit);
+  width: 50%;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-input03 {
+  gap: var(--dl-space-space-halfunit);
+  width: 50%;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-container2 {
+  gap: var(--dl-space-space-unit);
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.contact-form7-input04 {
+  gap: var(--dl-space-space-halfunit);
+  width: 50%;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-input05 {
+  gap: var(--dl-space-space-halfunit);
+  width: 50%;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-container3 {
+  flex: 0 0 auto;
+  width: 50%;
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-input06 {
+  gap: var(--dl-space-space-halfunit);
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-container4 {
+  flex: 0 0 auto;
+  width: 50%;
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-input07 {
+  gap: var(--dl-space-space-halfunit);
+  width: 431px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-select1 {
+  width: 416px;
+  height: 35px;
+}
+.contact-form7-container5 {
+  flex: 0 0 auto;
+  width: 50%;
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-input08 {
+  gap: var(--dl-space-space-halfunit);
+  width: 432px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-select2 {
+  width: 414px;
+  height: 33px;
+}
+.contact-form7-container6 {
+  flex: 0 0 auto;
+  width: 50%;
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-input09 {
+  gap: var(--dl-space-space-halfunit);
+  width: 432px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-select3 {
+  width: 414px;
+  height: 33px;
+}
+.contact-form7-container7 {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-input10 {
+  gap: var(--dl-space-space-halfunit);
+  width: 100%;
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form7-button {
+  align-self: flex-start;
+}
+@media(max-width: 991px) {
+  .contact-form7-max-width {
+    align-items: flex-start;
+  }
+  .contact-form7-form {
+    width: 100%;
+  }
+  .contact-form7-container {
+    gap: var(--dl-space-space-twounits);
+    width: 100%;
+    flex-direction: row;
+  }
+  .contact-form7-input {
+    width: 50%;
+  }
+  .contact-form7-input01 {
+    width: 50%;
+    flex-direction: column;
+  }
+  .contact-form7-container1 {
+    gap: var(--dl-space-space-twounits);
+    width: 100%;
+    flex-direction: row;
+  }
+  .contact-form7-input02 {
+    width: 50%;
+  }
+  .contact-form7-input03 {
+    width: 50%;
+    flex-direction: column;
+  }
+  .contact-form7-container2 {
+    gap: var(--dl-space-space-twounits);
+    width: 100%;
+    flex-direction: row;
+  }
+  .contact-form7-input04 {
+    width: 50%;
+  }
+  .contact-form7-input05 {
+    width: 50%;
+  }
+  .contact-form7-container3 {
+    gap: var(--dl-space-space-twounits);
+    width: 100%;
+    flex-direction: row;
+  }
+  .contact-form7-input06 {
+    gap: var(--dl-space-space-halfunit);
+    width: 50%;
+    flex-direction: column;
+  }
+  .contact-form7-container4 {
+    gap: var(--dl-space-space-twounits);
+    width: 100%;
+    flex-direction: row;
+  }
+  .contact-form7-input07 {
+    gap: var(--dl-space-space-halfunit);
+    width: 50%;
+    flex-direction: column;
+  }
+  .contact-form7-container5 {
+    gap: var(--dl-space-space-twounits);
+    width: 100%;
+    flex-direction: row;
+  }
+  .contact-form7-input08 {
+    gap: var(--dl-space-space-halfunit);
+    width: 50%;
+    flex-direction: column;
+  }
+  .contact-form7-container6 {
+    gap: var(--dl-space-space-twounits);
+    width: 100%;
+    flex-direction: row;
+  }
+  .contact-form7-input09 {
+    gap: var(--dl-space-space-halfunit);
+    width: 50%;
+    flex-direction: column;
+  }
+  .contact-form7-container7 {
+    gap: var(--dl-space-space-twounits);
+    width: 100%;
+    flex-direction: row;
+  }
+}
+@media(max-width: 479px) {
+  .contact-form7-form {
+    padding: var(--dl-space-space-unit);
+  }
+  .contact-form7-container {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .contact-form7-input {
+    width: 100%;
+  }
+  .contact-form7-input01 {
+    width: 100%;
+  }
+  .contact-form7-container1 {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .contact-form7-input02 {
+    width: 100%;
+  }
+  .contact-form7-input03 {
+    width: 100%;
+  }
+  .contact-form7-container2 {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .contact-form7-input04 {
+    width: 100%;
+  }
+  .contact-form7-input05 {
+    width: 100%;
+  }
+}

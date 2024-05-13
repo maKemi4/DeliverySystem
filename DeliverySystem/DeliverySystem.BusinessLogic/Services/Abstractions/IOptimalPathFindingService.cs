@@ -13,7 +13,7 @@ namespace DeliverySystem.BusinessLogic.Services.Abstractions
     {
         PathResult FindFinalPath(IEnumerable<int> vertices, 
             double[,] adjacencyMatrix, 
-            IEnumerable<double> importanceRates,
+            IEnumerable<decimal> importanceRates,
             bool minImportanceRate);
     }
 }

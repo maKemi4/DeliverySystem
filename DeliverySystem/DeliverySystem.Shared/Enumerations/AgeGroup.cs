@@ -9,8 +9,8 @@ namespace DeliverySystem.Shared.Enumerations
     public enum AgeGroup
     {
         _1_14 = 1,
-        _15_21 = 2,
-        _22_39 = 3,
-        _40_90 = 4
+        _1_21 = 2,
+        _1_39 = 3,
+        _1_90 = 4
     }
 }

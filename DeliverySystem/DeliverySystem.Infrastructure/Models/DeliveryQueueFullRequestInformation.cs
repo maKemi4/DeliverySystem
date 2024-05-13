@@ -20,7 +20,7 @@ namespace DeliverySystem.Infrastructure.Models
         public int NumOfSeveralyVictims { get; set; }
         public int ConditionType { get; set; }
         public int AgeGroup { get; set; }
-        public int InjuriesType { get; set; }
+        public int NeededSpecialist { get; set; }
         public string SituationDescription { get; set; }
 
         public int DeliveryQueueId { get; set; }

@@ -1,0 +1,121 @@
+:host { 
+  display: contents; 
+}
+.contact11-container {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact11-max-width {
+  align-self: center;
+}
+.contact11-section-title {
+  width: 100%;
+  margin-bottom: var(--dl-space-space-threeunits);
+}
+.contact11-content {
+  gap: var(--dl-space-space-oneandhalfunits);
+  height: 506px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact11-container1 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contact11-container2 {
+  flex: 0 0 auto;
+  width: auto;
+  height: 27px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.contact11-select {
+  width: 392px;
+  height: 27px;
+}
+.contact11-button {
+  color: #000000;
+  width: 30px;
+  height: 28px;
+  margin-left: 15px;
+  background-color: #40fd40;
+}
+.contact11-container3 {
+  width: 100%;
+  height: 339px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contact11-text2 {
+  margin-bottom: 10px;
+}
+.contact11-textinput {
+  margin-bottom: 10px;
+}
+.contact11-text3 {
+  margin-bottom: 10px;
+}
+.contact11-textinput1 {
+  margin-bottom: 10px;
+}
+.contact11-text4 {
+  margin-bottom: 10px;
+}
+.contact11-button1 {
+  margin-top: 20px;
+}
+.contact11-container4 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 49px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.contact11-container5 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact11-text5 {
+  width: 1034px;
+  height: 56px;
+  font-size: 35px;
+  font-style: normal;
+  font-family: "STIX Two Text";
+  font-weight: 600;
+}
+.contact11-textarea {
+  width: 1035px;
+  height: 126px;
+}
+.contact11-content1 {
+  width: 863px;
+  height: 674px;
+  align-items: center;
+  justify-content: center;
+}
+.contact11-iframe {
+  height: 664px;
+  margin-top: 10px;
+}
+@media(max-width: 991px) {
+  .contact11-content1 {
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+  }
+}

@@ -13,14 +13,14 @@ namespace DeliverySystem.Infrastructure.DistanceAndTimeFinding
 {
     public class DistanceAndTimeFindingService : IDistanceAndTimeFindingService
     {
-        double averageSpeed = 60; //??
+        private double averageSpeed = 60.0; //??
 
         public Task<DistanceAndTime> CalculateDistanceAndTime(Locality firstLocality, Locality secondLocality)
         {
-            var firstLocalityCordinate = new GeoCoordinate(firstLocality.Latitude, firstLocality.Longtitude);
-            var secondLocalityCordinate = new GeoCoordinate(secondLocality.Latitude, secondLocality.Longtitude);
+            var firstLocalityCordinate = new GeoCoordinate((double)firstLocality.Latitude, (double)firstLocality.Longtitude);
+            var secondLocalityCordinate = new GeoCoordinate((double)secondLocality.Latitude, (double)secondLocality.Longtitude);
 
-            var distance = firstLocalityCordinate.GetDistanceTo(secondLocalityCordinate) / 1000; //GetDistanceTo вертає відстань в метрах
+            var distance = firstLocalityCordinate.GetDistanceTo(secondLocalityCordinate) / 1000.0; //GetDistanceTo вертає відстань в метрах
             var distanceTime = distance / averageSpeed;
             var localityNames = $"{firstLocality.LocalityName}, {secondLocality.LocalityName}";
 

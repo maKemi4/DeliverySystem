@@ -8,7 +8,7 @@
     [NumOfSeveralyVictims] INT NOT NULL, 
     [ConditionType] INT NOT NULL , 
     [AgeGroup] INT NOT NULL , 
-    [InjuriesType] INT NOT NULL , 
+    [NeededSpecialist] INT NOT NULL , 
     [Importance] INT NOT NULL,
     [SituationDescription] VARCHAR(50) NULL, 
     [CustomerId] INT NOT NULL, 

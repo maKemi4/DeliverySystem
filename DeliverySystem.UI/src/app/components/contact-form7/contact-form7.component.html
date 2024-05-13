@@ -1,0 +1,168 @@
+<div class="contact-form7-contact1 thq-section-padding">
+  <h2 class="contact-form7-text thq-heading-2">{{ heading1 }}</h2>
+  <div class="contact-form7-max-width thq-section-max-width thq-flex-row">
+    <form class="contact-form7-form thq-flex-column">
+      <div class="contact-form7-container">
+        <div class="contact-form7-input">
+          <label for="contact-form-7-first-name" class="thq-body-small">
+            Ім&apos;я
+          </label>
+          <input
+            type="text"
+            id="contact-form-name"
+            placeholder="Ім'я"
+            class="thq-input"
+          />
+        </div>
+        <div class="contact-form7-input01">
+          <label for="contact-form-7-last-name" class="thq-body-small">
+            Прізвище
+          </label>
+          <input
+            type="text"
+            id="contact-form-surname"
+            placeholder="Прізвище"
+            class="thq-input"
+          />
+        </div>
+      </div>
+      <div class="contact-form7-container1">
+        <div class="contact-form7-input02">
+          <label for="contact-form-7-first-name" class="thq-body-small">
+            Email
+          </label>
+          <input
+            type="text"
+            id="contact-form-Email"
+            placeholder="Email"
+            class="thq-input"
+          />
+        </div>
+        <div class="contact-form7-input03">
+          <label for="contact-form-7-last-name" class="thq-body-small">
+            Номер телефону
+          </label>
+          <input
+            type="text"
+            id="contact-form-phoneNum"
+            placeholder="Номер телефону"
+            class="thq-input"
+          />
+        </div>
+      </div>
+      <div class="contact-form7-container2">
+        <div class="contact-form7-input04">
+          <label for="contact-form-7-email" class="thq-body-small">
+            Кількість постраждалих
+          </label>
+          <input
+            type="email"
+            id="contact-form-NumOfVictims"
+            required="true"
+            placeholder="Кількість постраждалих"
+            class="thq-input"
+          />
+        </div>
+        <div class="contact-form7-input05">
+          <label for="contact-form-7-phone" class="thq-body-small">
+            <span>Кількість важкопостраждалих</span>
+            <br />
+          </label>
+          <input
+            type="tel"
+            id="contact-form-numOfSeverelVictims"
+            placeholder="Кількість важкопостраждалих"
+            class="thq-input"
+          />
+        </div>
+      </div>
+      <div class="contact-form7-container3">
+        <div class="contact-form7-input06">
+          <label for="contact-form-7-options" class="thq-body-small">
+            Тип ситуації (виберіть одне):
+          </label>
+          <select
+            id="contact-form-condition-type"
+            placeholder="Select one"
+            class="thq-select"
+          >
+            <option value="Default">Звичайний</option>
+            <option value="Bombing">Постраждалі від бомбордування</option>
+            <option value="Natural disasters">
+              Постраждалі від природних катастроф
+            </option>
+            <option value="Infastructure damaged">
+              Постраждалі від пошкодження інфраструктури
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="contact-form7-container4">
+        <div class="contact-form7-input07">
+          <label for="contact-form-7-options" class="thq-body-small">
+            На скільки важливо  (виберіть одне):
+          </label>
+          <select
+            id="contact-form-importance"
+            placeholder="Select one"
+            class="contact-form7-select1 thq-select"
+          >
+            <option value="0">Звичайна важливість</option>
+            <option value="1">Низька</option>
+            <option value="2">Середня</option>
+            <option value="3">Висока</option>
+          </select>
+        </div>
+      </div>
+      <div class="contact-form7-container5">
+        <div class="contact-form7-input08">
+          <label for="contact-form-7-options" class="thq-body-small">
+            Вікові групи постраждалих  (виберіть одне):
+          </label>
+          <select
+            id="contact-form-age-group"
+            placeholder="Select one"
+            class="contact-form7-select2 thq-select"
+          >
+            <option value="0">Від 1 до 14 років</option>
+            <option value="1">Від 1 до 21 років</option>
+            <option value="2">Від 1 до 39 років</option>
+            <option value="3">Від 1 до 90 років</option>
+          </select>
+        </div>
+      </div>
+      <div class="contact-form7-container6">
+        <div class="contact-form7-input09">
+          <label for="contact-form-7-options" class="thq-body-small">
+            Потрібний спеціаліст при наявностиі (виберіть одне):
+          </label>
+          <select
+            id="contact-form-injuries-type"
+            class="contact-form7-select3 thq-select"
+          >
+            <option value="0">Не треба</option>
+            <option value="1">Польовий Хірург</option>
+            <option value="2">Психіатр</option>
+            <option value="3">Польвоий хірург + Психіатр</option>
+          </select>
+        </div>
+      </div>
+      <div class="contact-form7-container7">
+        <div class="contact-form7-input10">
+          <label for="contact-form-7-message" class="thq-body-small">
+            Опис ситуації
+          </label>
+          <textarea
+            id="contact-form-7-message"
+            rows="3"
+            placeholder="Опишіть, що сталося (не обов'язково)"
+            class="thq-input"
+          ></textarea>
+        </div>
+      </div>
+      <button type="submit" class="contact-form7-button thq-button-filled">
+        <span class="thq-body-small">{{ action }}</span>
+      </button>
+    </form>
+  </div>
+</div>

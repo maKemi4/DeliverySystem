@@ -1,0 +1,47 @@
+:host { 
+  display: contents; 
+}
+.hero81-header26 {
+  gap: var(--dl-space-space-twounits);
+  height: 790px;
+}
+.hero81-max-width {
+  align-self: center;
+}
+.hero81-column {
+  gap: var(--dl-space-space-oneandhalfunits);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.hero81-content {
+  gap: var(--dl-space-space-oneandhalfunits);
+  width: 100%;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+}
+.hero81-text {
+  text-align: center;
+}
+.hero81-ul {
+  width: 1053px;
+  height: 463px;
+  border-color: var(--dl-color-theme-neutral-dark);
+  border-width: 1px;
+}
+.hero81-li {
+  border-color: var(--dl-color-theme-neutral-dark);
+  border-width: 1px;
+}
+.hero81-li1 {
+  border-color: var(--dl-color-theme-neutral-dark);
+  border-width: 1px;
+}
+.hero81-li2 {
+  border-color: var(--dl-color-theme-neutral-dark);
+  border-width: 1px;
+}

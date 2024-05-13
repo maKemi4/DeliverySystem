@@ -17,12 +17,12 @@ namespace DeliverySystem.BusinessLogic.Services
 
         private readonly double[,] _adjacencyMatrix;
         private readonly IEnumerable<int> _vertices;
-        private readonly IList<double> _importanceRates;
+        private readonly IList<decimal> _importanceRates;
         private readonly bool _minImporance;
 
         public OptimalPathFindingLogic(IEnumerable<int> vertices,
             double[,] matrix,
-            IList<double> importanceRates,
+            IList<decimal> importanceRates,
             bool minImporance)
         {
             _vertices = vertices;
@@ -65,7 +65,7 @@ namespace DeliverySystem.BusinessLogic.Services
                     if (i + 1 == route.Count)
                         importanceTotal += _adjacencyMatrix[route[i - 1], route[i]];
                     else
-                        importanceTotal += totalTime * _importanceRates[route[i]];
+                        importanceTotal += totalTime * (double)_importanceRates[route[i]];
                     prevoiusTime = totalTime;
                 }
                 importanceRateCost = importanceTotal;
@@ -128,7 +128,7 @@ namespace DeliverySystem.BusinessLogic.Services
                 root.ChildNodes[i] = new Node { Vertex = destinationVertex };
 
                 double currentVertexCost = _adjacencyMatrix[startVertex, destinationVertex] + previousCost;
-                double importanceRateCost = currentVertexCost * _importanceRates[destinationVertex];
+                double importanceRateCost = currentVertexCost * (double)_importanceRates[destinationVertex];
 
                 var newSet = new HashSet<int>(set);
                 newSet.Remove(destinationVertex);
