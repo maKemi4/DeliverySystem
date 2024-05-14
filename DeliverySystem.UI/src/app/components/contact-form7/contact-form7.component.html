@@ -1,7 +1,7 @@
 <div class="contact-form7-contact1 thq-section-padding">
   <h2 class="contact-form7-text thq-heading-2">{{ heading1 }}</h2>
   <div class="contact-form7-max-width thq-section-max-width thq-flex-row">
-    <form class="contact-form7-form thq-flex-column">
+    <form class="contact-form7-form thq-flex-column" #reForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="contact-form7-container">
         <div class="contact-form7-input">
           <label for="contact-form-7-first-name" class="thq-body-small">
@@ -12,6 +12,8 @@
             id="contact-form-name"
             placeholder="Ім'я"
             class="thq-input"
+            name="customerName"
+            [(ngModel)]="request.contactInformation.customerName"
           />
         </div>
         <div class="contact-form7-input01">
@@ -23,6 +25,7 @@
             id="contact-form-surname"
             placeholder="Прізвище"
             class="thq-input"
+            [(ngModel)]="request.contactInformation.customerSurname"
           />
         </div>
       </div>
@@ -36,6 +39,7 @@
             id="contact-form-Email"
             placeholder="Email"
             class="thq-input"
+            [(ngModel)]="request.contactInformation.email"
           />
         </div>
         <div class="contact-form7-input03">
@@ -47,6 +51,7 @@
             id="contact-form-phoneNum"
             placeholder="Номер телефону"
             class="thq-input"
+            [(ngModel)]="request.contactInformation.phoneNum"
           />
         </div>
       </div>
@@ -61,6 +66,7 @@
             required="true"
             placeholder="Кількість постраждалих"
             class="thq-input"
+            [(ngModel)]="request.requirements.numOfVictims"
           />
         </div>
         <div class="contact-form7-input05">
@@ -73,6 +79,47 @@
             id="contact-form-numOfSeverelVictims"
             placeholder="Кількість важкопостраждалих"
             class="thq-input"
+            [(ngModel)]="request.requirements.numOfSeveralyVictims"
+          />
+        </div>
+      </div>
+      <div class="contact-form7-container">
+        <div class="contact-form7-input">
+          <label for="contact-form-7-locality" class="thq-body-small">
+            Назва населеного пункту
+          </label>
+          <input
+            type="text"
+            id="contact-form-locality"
+            placeholder="Назва"
+            class="thq-input"
+            [(ngModel)]="request.contactInformation.localityName"
+          />
+        </div>
+      </div>
+      <div class="contact-form7-container">
+        <div class="contact-form7-input01">
+          <label for="contact-form-7-latitude" class="thq-body-small">
+            Широта
+          </label>
+          <input
+            type="text"
+            id="contact-form-latitude"
+            placeholder="Широта"
+            class="thq-input"
+            [(ngModel)]="request.contactInformation.latitude"
+          />
+        </div>
+        <div class="contact-form7-input01">
+          <label for="contact-form-7-longtitude" class="thq-body-small">
+            Довгота
+          </label>
+          <input
+            type="text"
+            id="contact-form-longtitude"
+            placeholder="Довгота"
+            class="thq-input"
+            [(ngModel)]="request.contactInformation.longtitude"
           />
         </div>
       </div>
@@ -85,13 +132,14 @@
             id="contact-form-condition-type"
             placeholder="Select one"
             class="thq-select"
+            [(ngModel)]="request.requirements.conditionType" 
           >
-            <option value="Default">Звичайний</option>
-            <option value="Bombing">Постраждалі від бомбордування</option>
-            <option value="Natural disasters">
+            <option value="0">Звичайний</option>
+            <option value="1">Постраждалі від бомбордування</option>
+            <option value="2">
               Постраждалі від природних катастроф
             </option>
-            <option value="Infastructure damaged">
+            <option value="3">
               Постраждалі від пошкодження інфраструктури
             </option>
           </select>
@@ -106,6 +154,7 @@
             id="contact-form-importance"
             placeholder="Select one"
             class="contact-form7-select1 thq-select"
+            [(ngModel)]="request.requirements.importance" 
           >
             <option value="0">Звичайна важливість</option>
             <option value="1">Низька</option>
@@ -123,6 +172,7 @@
             id="contact-form-age-group"
             placeholder="Select one"
             class="contact-form7-select2 thq-select"
+            [(ngModel)]="request.requirements.ageGroup" 
           >
             <option value="0">Від 1 до 14 років</option>
             <option value="1">Від 1 до 21 років</option>
@@ -139,6 +189,7 @@
           <select
             id="contact-form-injuries-type"
             class="contact-form7-select3 thq-select"
+            [(ngModel)]="request.requirements.neededSpecialist" 
           >
             <option value="0">Не треба</option>
             <option value="1">Польовий Хірург</option>
@@ -157,6 +208,7 @@
             rows="3"
             placeholder="Опишіть, що сталося (не обов'язково)"
             class="thq-input"
+            [(ngModel)]="request.requirements.situationDescription" 
           ></textarea>
         </div>
       </div>

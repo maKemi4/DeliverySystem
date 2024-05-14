@@ -1,4 +1,5 @@
 ﻿using DeliverySystem.BusinessLogic.Models;
+using DeliverySystem.BusinessLogic.Services.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,6 @@ using System.Threading.Tasks;
 
 namespace DeliverySystem.BusinessLogic.Services
 {
-    public interface IOptimalPathChoosingService
-    {
-        PathResult ChooseBestOne(IEnumerable<int> vertices,
-           double[,] matrix,
-           IEnumerable<decimal> importanceRates);
-    }
-
     public class OptimalPathChoosingService : IOptimalPathChoosingService
     {
         public PathResult ChooseBestOne(IEnumerable<int> vertices,

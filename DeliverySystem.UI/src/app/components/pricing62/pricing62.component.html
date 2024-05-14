@@ -7,35 +7,36 @@
     </div>
     <div class="pricing62-tabs">
       <button
-        (click)="isMonthly = true"
-        *ngIf="isMonthly"
+        (click)="isUser = true"
+        *ngIf="isUser"
         class="pricing62-button thq-button-filled"
-      >
-        <span class="thq-body-small">Як користувач</span>
-      </button>
-      <button
-        (click)="isMonthly = true"
-        *ngIf="!isMonthly"
-        class="pricing62-button1 thq-button-outline"
-      >
-        <span class="thq-body-small">Monthly</span>
-      </button>
-      <button
-        (click)="isMonthly = false"
-        *ngIf="isMonthly"
-        class="pricing62-button2 thq-button-outline"
       >
         <span class="thq-body-small">Як волонтер</span>
       </button>
       <button
-        (click)="isMonthly = false"
-        *ngIf="!isMonthly"
+        (click)="isUser = true"
+        *ngIf="!isUser"
+        class="pricing62-button1 thq-button-outline"
+      >
+        <span class="thq-body-small">Як волонтер</span>
+      </button>
+      <button
+        (click)="isUser = false"
+        *ngIf="isUser"
+        class="pricing62-button2 thq-button-outline"
+      >
+        <span class="thq-body-small">Як користувач</span>
+      </button>
+      <button
+        (click)="isUser = false"
+        *ngIf="!isUser"
         class="pricing62-button3 thq-button-filled"
       >
-        <span class="thq-body-small">Yearly</span>
+        <span class="thq-body-small">Як користувач</span>
       </button>
     </div>
-    <div *ngIf="!isMonthly" class="pricing62-container">
+    <div *ngIf="!isUser" class="pricing62-container">
+      <div class="pricing62-column-empty"></div>
       <div class="pricing62-column thq-card">
         <div class="pricing62-price">
           <div class="pricing62-price1">
@@ -69,8 +70,9 @@
           <span class="thq-body-small">{{ plan1Action1 }}</span>
         </a>
       </div>
+      <div class="pricing62-column-empty"></div>
     </div>
-    <div  class="pricing62-container1">
+    <div *ngIf="isUser" class="pricing62-container1">
       <div class="pricing62-column1 thq-card">
         <div class="pricing62-price2">
           <div class="pricing62-price3">
@@ -126,7 +128,7 @@
         </div>
         <a
           routerLink="/get-the-orders"
-          class="pricing62-button6 thq-button-filled"
+          class="pricing62-button6 thq-button-outline"
         >
           <span class="thq-body-small">{{ plan2Action1 }}</span>
         </a>
@@ -153,7 +155,7 @@
         </div>
         <a
           routerLink="/path-creating"
-          class="pricing62-button7 thq-button-filled"
+          class="pricing62-button7 thq-button-outline"
         >
           <span class="thq-body-small">{{ plan3Action1 }}</span>
         </a>

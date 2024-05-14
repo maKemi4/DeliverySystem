@@ -1,6 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
+import { FormsModule }   from '@angular/forms';
 
 import { Features18 } from './features18/features18.component'
 import { ContactForm7 } from './contact-form7/contact-form7.component'
@@ -32,7 +33,7 @@ import { Contact4 } from './contact4/contact4.component'
     Pricing62,
     Contact4
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   exports: [
     Features18,
     ContactForm7,

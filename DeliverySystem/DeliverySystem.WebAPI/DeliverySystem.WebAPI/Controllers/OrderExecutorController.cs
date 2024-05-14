@@ -30,5 +30,12 @@ namespace DeliverySystem.WebAPI.Controllers
             var item = await _orderExecutorService.GetOrderExecutor(orderExecutorId);
             return Ok(item);
         }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<OrderExecutorInfo>>> GetOrderExecutors()
+        {
+            var items = await _orderExecutorService.GetOrderExecutors();
+            return Ok(items);
+        }
     }
 }

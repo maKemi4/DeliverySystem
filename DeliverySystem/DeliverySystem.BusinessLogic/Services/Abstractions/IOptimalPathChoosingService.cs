@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace DeliverySystem.BusinessLogic.Services.Abstractions
 {
-    public interface IPathCreatingService
+    public interface IOptimalPathChoosingService
     {
-        Task<BuiltPath> CreatePath(int orderId);
+        PathResult ChooseBestOne(IEnumerable<int> vertices,
+           double[,] matrix,
+           IEnumerable<decimal> importanceRates);
     }
 }

@@ -60,7 +60,7 @@
 }
 .pricing62-button1 {
   gap: var(--dl-space-space-halfunit);
-  width: 120px;
+  width: 138px;
   height: 60px;
   display: flex;
   align-items: center;
@@ -91,7 +91,7 @@
 }
 .pricing62-button3 {
   gap: var(--dl-space-space-halfunit);
-  width: 120px;
+  width: 144px;
   height: 60px;
   display: flex;
   padding: var(--dl-space-space-unit);
@@ -122,6 +122,14 @@
   border-width: 1px;
   background-color: #f1dab6;
 }
+.pricing62-column-empty {
+  flex: 1;
+  width: 289px;
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+}
+
 .pricing62-price {
   gap: var(--dl-space-space-twounits);
   display: flex;
@@ -176,6 +184,7 @@
 .pricing62-button4 {
   width: 100%;
   text-decoration: none;
+  text-align: center;
 }
 .pricing62-container1 {
   gap: var(--dl-space-space-twounits);
@@ -250,6 +259,7 @@
 .pricing62-button5 {
   width: 100%;
   text-decoration: none;
+  text-align: center;
 }
 .pricing62-column2 {
   flex: 1;
@@ -310,6 +320,7 @@
 .pricing62-button6 {
   width: 100%;
   text-decoration: none;
+  text-align: center;
 }
 .pricing62-column3 {
   flex: 1;
@@ -371,6 +382,7 @@
 .pricing62-button7 {
   width: 100%;
   text-decoration: none;
+  text-align: center;
 }
 @media(max-width: 991px) {
   .pricing62-container {

@@ -1,5 +1,6 @@
 ﻿using DeliverySystem.BusinessLogic.Models;
 using DeliverySystem.BusinessLogic.Services.Abstractions;
+using DeliverySystem.Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DeliverySystem.WebAPI.Controllers
@@ -9,10 +10,13 @@ namespace DeliverySystem.WebAPI.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrderItemService _orderItemService;
+        private readonly IPathCreatingService _pathCreatingService;
 
-        public OrderController(IOrderItemService orderItemService)
+        public OrderController(IOrderItemService orderItemService,
+            IPathCreatingService pathCreatingService)
         {
             _orderItemService = orderItemService;
+            _pathCreatingService = pathCreatingService;
         }
 
         [HttpPost]
@@ -28,5 +32,22 @@ namespace DeliverySystem.WebAPI.Controllers
             var items = await _orderItemService.GetOrderItems(orderId);
             return Ok(items);
         }
+
+        [HttpPost("/create-with-path")]
+        public async Task<ActionResult<BuiltPath>> CreateOrderAndBuildPath(int orderExecutorId)
+        {
+            var orderId = await _orderItemService.CreateOrder(orderExecutorId);
+            var path = await _pathCreatingService.CreatePath(orderId);
+
+            return Ok(path);
+        }
+
+        [HttpGet("{orderId}/path")]
+        public async Task<ActionResult<BuiltPath>> GetPath(int orderId)
+        {
+            var path = await _pathCreatingService.CreatePath(orderId);
+            return Ok(path);
+        }
+
     }
 }

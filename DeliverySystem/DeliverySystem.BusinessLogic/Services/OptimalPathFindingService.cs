@@ -18,11 +18,11 @@ namespace DeliverySystem.BusinessLogic.Services
             IEnumerable<decimal> importanceRates,
             bool minImportanceRate)
         {
-            OptimalPathFindingLogic tspSolverFirst = new OptimalPathFindingLogic(vertices, adjacencyMatrix, importanceRates.ToList(), minImportanceRate);
+            OptimalPathFindingLogic tspSolver = new OptimalPathFindingLogic(vertices, adjacencyMatrix, importanceRates.ToList(), minImportanceRate);
 
             double timeCost;
             double importanceRateCost;
-            IEnumerable<int> shortestPath = tspSolverFirst.Solve(out timeCost, out importanceRateCost);
+            IEnumerable<int> shortestPath = tspSolver.Solve(out timeCost, out importanceRateCost);
 
             return new PathResult(shortestPath, timeCost, importanceRateCost);
         }

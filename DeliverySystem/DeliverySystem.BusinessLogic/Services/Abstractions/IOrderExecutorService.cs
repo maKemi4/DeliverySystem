@@ -12,5 +12,6 @@ namespace DeliverySystem.BusinessLogic.Services.Abstractions
     {
         Task<int> AddOrderExecutor(OrderExecutor orderExecutor);
         Task<OrderExecutorInfo> GetOrderExecutor(int orderExecutorId);
+        Task<IEnumerable<OrderExecutorInfo>> GetOrderExecutors();
     }
 }

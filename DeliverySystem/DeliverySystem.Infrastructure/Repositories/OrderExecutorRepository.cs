@@ -13,6 +13,7 @@ namespace DeliverySystem.Infrastructure.Repositories
     {
         Task<int> AddOrderExecutor(OrderExecutor orderExecutor);
         Task<OrderExecutor> GetOrderExecutor(int orderExecutorId);
+        Task<IEnumerable<OrderExecutor>> GetOrderExecutors();
     }
 
     public class OrderExecutorRepository : IOrderExecutorRepository
@@ -52,6 +53,19 @@ namespace DeliverySystem.Infrastructure.Repositories
 
                 var record = await connection.QueryFirstOrDefaultAsync<OrderExecutor>("p_GetOrderExecutor", parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
+
+                return record;
+            }
+        }
+
+        public async Task<IEnumerable<OrderExecutor>> GetOrderExecutors()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var query = "SELECT OrderExecutorId, ExecutorName, ExecutorSurname, OrganizationName FROM [dbo].[OrderExecutor]";
+
+                var record = await connection.QueryAsync<OrderExecutor>(query,
+                    commandType: System.Data.CommandType.Text);
 
                 return record;
             }

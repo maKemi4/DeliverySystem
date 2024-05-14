@@ -104,6 +104,10 @@ export class Pricing62 {
   plan1Feature2: string = 'Receive quick help from volunteers'
   @Input()
   plan1Price: string = '$0'
-  isMonthly: boolean = true
+
+
+  isUser: boolean = true
+
+
   constructor() {}
 }

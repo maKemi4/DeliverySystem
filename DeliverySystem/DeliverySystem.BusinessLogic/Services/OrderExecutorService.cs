@@ -35,5 +35,12 @@ namespace DeliverySystem.BusinessLogic.Services
 
             return item;
         }
+
+        public async Task<IEnumerable<OrderExecutorInfo>> GetOrderExecutors()
+        {
+            var records = await _orderExecutorRepository.GetOrderExecutors();
+            var items = _mapper.Map<IEnumerable<OrderExecutorInfo>>(records);
+            return items;
+        }
     }
 }

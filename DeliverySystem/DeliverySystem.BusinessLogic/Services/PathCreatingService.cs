@@ -25,7 +25,7 @@ namespace DeliverySystem.BusinessLogic.Services
             _optimalPathChoosingService = optimalPathChoosingService;
         }
 
-        public async Task<InitializedPath> CreatePath(int orderId)
+        public async Task<BuiltPath> CreatePath(int orderId)
         {
             var records = await _orderItemService.GetOrderItems(orderId);
             var orderItems = new List<OrderItem>() { new OrderItem() { ImportanceRate = 0, LocalityName = "Kiev", Latitude = 0.0M, Longitude = 0.0M } };
@@ -62,9 +62,19 @@ namespace DeliverySystem.BusinessLogic.Services
                 }
             }
 
-            var path = _optimalPathChoosingService.ChooseBestOne(vertices, matrix, importanceRates.AsEnumerable());
+            var optimalPathResult = _optimalPathChoosingService.ChooseBestOne(vertices, matrix, importanceRates.AsEnumerable());
+            var path = new List<PathLocality>();
+            int order = 0;
+            foreach(var item in optimalPathResult.ShortestPath)
+            {
+                path.Add(new PathLocality(orderItems[item].LocalityName, orderItems[item].Latitude, orderItems[item].Longitude, order));
+                order++;
+            }
 
-            return new InitializedPath { Vertics = vertices, Matrix = matrix, ImportanceRates = importanceRates };
+            return new BuiltPath { 
+                TotalImportanceRate = optimalPathResult.ImportanceRateCost, 
+                TotalTime = optimalPathResult.TimeCost, 
+                Path = path};
         }
     }
 }
