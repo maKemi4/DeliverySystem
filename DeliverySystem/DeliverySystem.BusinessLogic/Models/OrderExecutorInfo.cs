@@ -8,6 +8,7 @@ namespace DeliverySystem.BusinessLogic.Models
 {
     public class OrderExecutorInfo
     {
+        public int OrderExecutorId { get; set; }
         public string ExecutorName { get; set; }
         public string ExecutorSurname { get; set; }
         public string OrganizationName { get; set; }

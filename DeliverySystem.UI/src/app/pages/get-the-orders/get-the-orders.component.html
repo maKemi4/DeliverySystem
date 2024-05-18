@@ -1,4 +1,23 @@
 <div class="get-the-orders-container">
   <div class="get-the-orders-navbar1"><app-navbar4></app-navbar4></div>
-  <div class="get-the-orders-hero2"><app-hero81></app-hero81></div>
+  <div class="get-the-orders-hero2">
+    <table >
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Importance Rate</td>
+          <td>Submission Date</td>
+          <td>Is Completed</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{item.deliveryQueueId}}</td>
+          <td>{{item.importanceRate}}</td>
+          <td>{{item.submissionDate}}</td>
+          <td>{{item.isCompleted}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

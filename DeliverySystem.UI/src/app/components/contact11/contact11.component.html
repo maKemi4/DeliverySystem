@@ -2,63 +2,69 @@
   <div class="contact11-max-width thq-section-max-width">
     <div class="contact11-section-title">
       <div class="contact11-content">
-        <div id="select-executor" class="contact11-container1">
+        <div *ngIf="!isNewExecutor" id="select-executor" class="contact11-container1">
           <h2 class="thq-heading-2">{{ heading1 }}</h2>
           <div class="contact11-container2">
-            <select class="contact11-select">
-              <option value="Option 1">Option 1</option>
-              <option value="Option 2">Option 2</option>
-              <option value="Option 3">Option 3</option>
+            <select class="contact11-select" (change)="onExecutorChange($event.target.value)">
+              <option [value]="-1" [disabled]="true">Select the executor</option>
+              <option *ngFor="let executor of executors" [value]="executor.orderExecutorId">{{executor.executorName}} {{executor.executorSurname}} - {{executor.organizationName}}</option>
             </select>
-            <button type="button" class="contact11-button button">
-              {{ button1 }}
+            <button type="button" class="contact11-button button" (click)="isNewExecutor = true" >
+              <svg style="margin: -10px -11px 5px -10px !important;"  width="10px" height="10px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </button>
           </div>
         </div>
-        <div id="executor-creation" class="contact11-container3">
-          <h2 class="thq-heading-2">Створіть волонтера:</h2>
-          <span class="contact11-text2">{{ text }}</span>
-          <input
-            type="text"
-            [attr.placeholder]="textinputPlaceholder"
-            class="contact11-textinput input"
-          />
-          <span class="contact11-text3">{{ text1 }}</span>
-          <input
-            type="text"
-            [attr.placeholder]="textinputPlaceholder1"
-            class="contact11-textinput1 input"
-          />
-          <span class="contact11-text4">{{ text2 }}</span>
-          <input
-            type="text"
-            [attr.placeholder]="textinputPlaceholder2"
-            class="input"
-          />
-          <button type="button" class="contact11-button1 button">
-            {{ button }}
-          </button>
+        <div *ngIf="isNewExecutor" id="executor-creation" class="contact11-container3">
+          <form class="contact11-container3" #reForm="ngForm" (ngSubmit)="createExecutor()">
+            <h2 class="thq-heading-2">Створіть волонтера:</h2>
+            <span class="contact11-text2">{{ text }}</span>
+            <input
+              type="text"
+              placeholder="Ім'я"
+              class="contact11-textinput input"
+              [(ngModel)]="newExecutor.executorName" 
+            />
+            <span class="contact11-text3">{{ text1 }}</span>
+            <input
+              type="text"
+              placeholder="Прізвище"
+              class="contact11-textinput1 input"
+              [(ngModel)]="newExecutor.executorSurname" 
+            />
+            <span class="contact11-text4">{{ text2 }}</span>
+            <input
+              type="text"
+              placeholder="Організація"
+              class="input"
+              [(ngModel)]="newExecutor.organizationName" 
+            />
+            <button type="submit" class="contact11-button1 button">
+              {{ button }}
+            </button>
+          </form>
         </div>
       </div>
     </div>
     <div class="contact11-container4">
-      <button type="submit" class="button">{{ button2 }}</button>
+      <button [disabled]="selectedExecutorId == -1" type="button" class="button" (click)="buildPath()">{{ button2 }}</button>
     </div>
     <div class="contact11-container5">
       <p class="contact11-text5 thq-body-large">Побудований шлях:</p>
       <textarea
         id="result"
         disabled="true"
-        [attr.placeholder]="textareaPlaceholder"
         class="contact11-textarea textarea"
+        [(ngModel)]="foundPathResult"
       ></textarea>
     </div>
     <div class="contact11-content1 thq-flex-row">
-      <iframe
+      <!-- <iframe
         [attr.src]="location1GoogleMap"
         title="Map"
         class="contact11-iframe thq-img-ratio-16-9"
-      ></iframe>
+      ></iframe> -->
     </div>
   </div>
 </div>

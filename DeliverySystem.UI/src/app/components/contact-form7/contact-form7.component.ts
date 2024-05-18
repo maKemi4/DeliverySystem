@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {NgForm} from '@angular/forms';
 import { DeliveryRequestCreateModel } from 'src/app/models/deliveryRequestCreateModel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'contact-form7',
@@ -27,7 +28,7 @@ export class ContactForm7 {
   private readonly baseUrl = 'http://localhost:5159/DeliveryQueue';
   request: DeliveryRequestCreateModel;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.request = new DeliveryRequestCreateModel();
   }
 
@@ -42,9 +43,8 @@ export class ContactForm7 {
       return value
     });
 
-    console.log(json)
     this.http.post(this.baseUrl, json, httpOptions).subscribe(next =>{
-     console.log("successful");
+      this.router.navigate(['/services']);
     },
     error => {
      console.log(error);

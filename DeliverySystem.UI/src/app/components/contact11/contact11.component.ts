@@ -1,17 +1,21 @@
-import { Component, Input } from '@angular/core'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Component, Input, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
+import { ExecutorModel } from 'src/app/models/executorModel'
+import { FoundPathResult } from 'src/app/models/pathModel'
 
 @Component({
   selector: 'app-contact11',
   templateUrl: 'contact11.component.html',
   styleUrls: ['contact11.component.css'],
 })
-export class Contact11 {
+export class Contact11 implements OnInit {
   @Input()
   content1: string = 'Побудований шлях:'
   @Input()
   phone1: string = '+1234567890'
   @Input()
-  textinputPlaceholder1: string = 'placeholder'
+  textinputPlaceholder1: string = "Ім'я"
   @Input()
   text1: string = 'Введіть прізвище:'
   @Input()
@@ -44,10 +48,73 @@ export class Contact11 {
   @Input()
   heading1: string = 'Оберіть волонтера:'
   @Input()
-  textareaPlaceholder: string = 'placeholder'
+  textareaPlaceholder: string = ''
   @Input()
   textinputPlaceholder: string = 'placeholder'
   @Input()
   text3: string = 'Text'
-  constructor() {}
+  
+  private readonly baseExecutorUrl = 'http://localhost:5159/OrderExecutor';
+  private readonly basePathBuilderUrl = 'http://localhost:5159/create-with-path';
+  
+  executors: ExecutorModel[];
+  isNewExecutor: boolean = false;
+  newExecutor: ExecutorModel = new ExecutorModel();
+  selectedExecutorId: number = -1;
+  foundPathResult: string;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.getExecutors().subscribe((items) => {
+      if(items.length == 0){
+        this.isNewExecutor = true;
+      }
+      else{
+        this.executors = items;
+      }
+    });
+  }
+
+  getExecutors(): Observable<ExecutorModel[]> {
+    return this.http.get<ExecutorModel[]>(this.baseExecutorUrl);
+  }
+
+  createExecutor() {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    }
+
+    var json = JSON.stringify(this.newExecutor);
+
+    this.http.post(this.baseExecutorUrl, json, httpOptions).subscribe(next =>{
+      window.location.reload();
+    },
+    error => {
+     console.log(error);
+    });
+  }
+
+  onExecutorChange(executorId) {
+    this.selectedExecutorId = executorId;
+  }
+
+  buildPath(){
+    let url = this.basePathBuilderUrl + '?orderExecutorId=' + this.selectedExecutorId;
+    this.http.post<FoundPathResult>(url, {}).subscribe(response =>{
+      console.log(response)
+      let strResult = '';
+      for(let i = 0; i < response.path.length; i++){
+        strResult += response.path[i].name;
+        if(i < response.path.length - 1){
+          strResult += ' - '
+        }
+      }
+      strResult += '\nTotal time: ' + response.totalTime;
+      this.foundPathResult = strResult;
+    },
+    error => {
+     console.log(error);
+    });
+  }
 }

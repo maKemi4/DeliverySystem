@@ -15,6 +15,7 @@ namespace DeliverySystem.BusinessLogic.Mappings
         {
             CreateMap<OrderExecutor, OrderExecutorInfo>()
                 .ForMember(dest => dest.ExecutorName, opt => opt.MapFrom(src => src.ExecutorName))
+                .ForMember(dest => dest.OrderExecutorId, opt => opt.MapFrom(src => src.OrderExecutorId))
                 .ForMember(dest => dest.ExecutorSurname, opt => opt.MapFrom(src => src.ExecutorSurname))
                 .ForMember(dest => dest.OrganizationName, opt => opt.MapFrom(src => src.OrganizationName));
         }

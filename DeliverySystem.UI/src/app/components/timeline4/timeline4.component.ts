@@ -9,33 +9,31 @@ export class Timeline4 {
   @Input()
   card4Action1: string = 'Відк'
   @Input()
-  card2Heading: string = 'Receive Volunteer Support'
+  card2Heading: string = 'Тут може бути ваш відгук.'
   @Input()
-  card1Content: string = 'Users can fill out a form to request assistance.'
+  card1Content: string = '...'
   @Input()
   action1: string = 'Primary action'
   @Input()
-  card1Heading: string = 'Submit Assistance Request'
+  card1Heading: string = 'Тут може бути ваш відгук.'
   @Input()
   card1Action1: string = 'Fill out form'
   @Input()
   card2Action2: string = 'Volunteer opportunities'
   @Input()
-  card3Heading: string = 'Optimize Volunteer Management'
+  card3Heading: string = 'Тут може бути ваш відгук.'
   @Input()
-  card4Content: string =
-    'Constantly improve the platform and services based on feedback and evaluation.'
+  card4Content: string = '...'
   @Input()
   card4Action2: string = 'Platform updates'
   @Input()
   card2Action1: string = 'Get help from volunteers'
   @Input()
-  card4Heading: string = 'Continuous Improvement'
+  card4Heading: string = 'Тут може бути ваш відгук.'
   @Input()
   date2: string = 'February 2022'
   @Input()
-  card3Content: string =
-    'Efficiently manage and coordinate volunteers for better assistance delivery.'
+  card3Content: string = '...'
   @Input()
   title1: string = 'Відгуки від користувачів та волонтерів'
   @Input()
@@ -49,8 +47,7 @@ export class Timeline4 {
   @Input()
   card3Action2: string = 'Volunteer management tips'
   @Input()
-  card2Content: string =
-    'Volunteers provide quick assistance based on the requests.'
+  card2Content: string = '...'
   @Input()
   card3Action1: string = 'Manage volunteers'
   @Input()

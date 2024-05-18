@@ -28,7 +28,7 @@ namespace DeliverySystem.BusinessLogic.Services
         public async Task<BuiltPath> CreatePath(int orderId)
         {
             var records = await _orderItemService.GetOrderItems(orderId);
-            var orderItems = new List<OrderItem>() { new OrderItem() { ImportanceRate = 0, LocalityName = "Kiev", Latitude = 0.0M, Longitude = 0.0M } };
+            var orderItems = new List<OrderItem>() { new OrderItem() { ImportanceRate = 0, LocalityName = "Kiev", Latitude = 50.4536M, Longitude = 30.5164M } };
             orderItems.AddRange(records);
 
             var size = orderItems.Count;
