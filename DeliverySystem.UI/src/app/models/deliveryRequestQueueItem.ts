@@ -3,4 +3,7 @@ export class DeliveryRequestQueueItem {
     importanceRate : number;
     submissionDate : Date;
     isCompleted : boolean;
+    localityName : string;
+    customerFullName : string;
+    phoneNum : string;
 }

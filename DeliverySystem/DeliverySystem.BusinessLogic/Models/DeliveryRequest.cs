@@ -32,6 +32,6 @@ namespace DeliverySystem.BusinessLogic.Models
         public Importance Importance { get; set; }
         public AgeGroup AgeGroup { get; set; }
         public NeededSpecialist NeededSpecialist { get; set; }
-        public string SituationDescription { get; set; } //ПРИБРАТИ
+        public string? SituationDescription { get; set; }
     }
 }

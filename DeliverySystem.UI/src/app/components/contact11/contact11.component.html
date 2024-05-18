@@ -6,7 +6,7 @@
           <h2 class="thq-heading-2">{{ heading1 }}</h2>
           <div class="contact11-container2">
             <select class="contact11-select" (change)="onExecutorChange($event.target.value)">
-              <option [value]="-1" [disabled]="true">Select the executor</option>
+              <option [value]="-1" [disabled]="true">Обрати</option>
               <option *ngFor="let executor of executors" [value]="executor.orderExecutorId">{{executor.executorName}} {{executor.executorSurname}} - {{executor.organizationName}}</option>
             </select>
             <button type="button" class="contact11-button button" (click)="isNewExecutor = true" >

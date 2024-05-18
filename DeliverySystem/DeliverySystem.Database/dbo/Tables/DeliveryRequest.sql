@@ -12,5 +12,6 @@
     [Importance] INT NOT NULL,
     [SituationDescription] VARCHAR(50) NULL, 
     [CustomerId] INT NOT NULL, 
-    CONSTRAINT [FK_DeliveryRequest_Customer_CustomerId] FOREIGN KEY ([CustomerId]) REFERENCES [Customer]([CustomerId])
+    CONSTRAINT [FK_DeliveryRequest_Customer_CustomerId] FOREIGN KEY ([CustomerId]) REFERENCES [Customer]([CustomerId]),
+    CONSTRAINT CK_LocalityName_Format CHECK (PATINDEX('%[^а-яА-Яa-zA-Z]%', LocalityName) = 0)
 )

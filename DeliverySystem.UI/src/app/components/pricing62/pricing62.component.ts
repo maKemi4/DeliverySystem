@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core'
 })
 export class Pricing62 {
   @Input()
-  plan3Feature11: string = 'Найоптимальніший маршту!'
+  plan3Feature11: string = 'Найоптимальніший маршрут!'
   @Input()
   plan2Feature21: string = 'Перегляд важливості заявок!'
   @Input()

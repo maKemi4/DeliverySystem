@@ -12,5 +12,8 @@ namespace DeliverySystem.BusinessLogic.Models
         public decimal ImportanceRate { get; set; }
         public DateTime SubmissionDate { get; set; }
         public bool IsCompleted { get; set; }
+        public string LocalityName { get; set; }
+        public string CustomerFullName { get; set; }
+        public string PhoneNum { get; set; }
     }
 }

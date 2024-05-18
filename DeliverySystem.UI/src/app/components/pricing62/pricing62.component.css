@@ -150,8 +150,6 @@
   height: 180px;
   font-size: 40px;
   text-align: center;
-  border-color: var(--dl-color-theme-neutral-dark);
-  border-width: 1px;
 }
 .pricing62-list {
   gap: var(--dl-space-space-unit);
@@ -225,8 +223,6 @@
   height: 180px;
   font-size: 40px;
   text-align: center;
-  border-color: var(--dl-color-theme-neutral-dark);
-  border-width: 1px;
 }
 .pricing62-list1 {
   gap: var(--dl-space-space-unit);
@@ -292,8 +288,6 @@
   height: 173px;
   font-size: 40px;
   text-align: center;
-  border-color: var(--dl-color-theme-neutral-dark);
-  border-width: 1px;
 }
 .pricing62-list2 {
   gap: var(--dl-space-space-unit);
@@ -354,8 +348,6 @@
   font-size: 40px;
   align-self: center;
   text-align: center;
-  border-color: var(--dl-color-theme-neutral-dark);
-  border-width: 1px;
 }
 .pricing62-list3 {
   gap: var(--dl-space-space-unit);

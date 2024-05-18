@@ -107,10 +107,10 @@ export class Contact11 implements OnInit {
       for(let i = 0; i < response.path.length; i++){
         strResult += response.path[i].name;
         if(i < response.path.length - 1){
-          strResult += ' - '
+          strResult += ' -> '
         }
       }
-      strResult += '\nTotal time: ' + response.totalTime;
+      strResult += '\nПотрібно витратити: ' + response.totalTime + ' годин';
       this.foundPathResult = strResult;
     },
     error => {

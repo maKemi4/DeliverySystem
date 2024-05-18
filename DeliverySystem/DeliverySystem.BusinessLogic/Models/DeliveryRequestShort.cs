@@ -14,7 +14,7 @@ namespace DeliverySystem.BusinessLogic.Models
         public string LocalityName { get; set; }
         public int NumOfVictims { get; set; }
         public int? NumOfSeveralyVictims { get; set; }
-        public string SituationDescription { get; set; }
+        public string? SituationDescription { get; set; }
         public int Importance { get; set; }
         public bool IsCompleted { get; set; }
     }

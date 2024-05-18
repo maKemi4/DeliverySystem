@@ -21,7 +21,7 @@ namespace DeliverySystem.Infrastructure.Models
         public int ConditionType { get; set; }
         public int AgeGroup { get; set; }
         public int NeededSpecialist { get; set; }
-        public string SituationDescription { get; set; }
+        public string? SituationDescription { get; set; }
 
         public int DeliveryQueueId { get; set; }
         public int Importance { get; set; }

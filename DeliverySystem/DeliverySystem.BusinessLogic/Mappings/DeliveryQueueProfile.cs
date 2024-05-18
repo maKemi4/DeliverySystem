@@ -35,7 +35,10 @@ namespace DeliverySystem.BusinessLogic.Mappings
                 .ForMember(dest => dest.DeliveryQueueId, opt => opt.MapFrom(src => src.DeliveryQueueId))
                 .ForMember(dest => dest.ImportanceRate, opt => opt.MapFrom(src => src.ImportanceRate))
                 .ForMember(dest => dest.SubmissionDate, opt => opt.MapFrom(src => src.SubmissionDate))
-                .ForMember(dest => dest.IsCompleted, opt => opt.MapFrom(src => src.IsCompleted));
+                .ForMember(dest => dest.IsCompleted, opt => opt.MapFrom(src => src.IsCompleted))
+                .ForMember(dest => dest.LocalityName, opt => opt.MapFrom(src => src.LocalityName))
+                .ForMember(dest => dest.CustomerFullName, opt => opt.MapFrom(src => src.CustomerFullName))
+                .ForMember(dest => dest.PhoneNum, opt => opt.MapFrom(src => src.PhoneNum));
 
             CreateMap<DeliveryQueueFullRequestInformation, DeliveryRequestShort>()
                 .ForMember(dest => dest.CustomerFullName, opt => opt.MapFrom(src => $"{src.CustomerName} {src.CustomerSurname}"))
